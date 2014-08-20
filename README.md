@@ -1,0 +1,4 @@
+AndroidDict
+===========
+
+Android basic demos 
