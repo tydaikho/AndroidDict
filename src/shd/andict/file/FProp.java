@@ -1,4 +1,4 @@
-package lmc.lonely.file;
+package shd.andict.file;
 import lmc.lonely.AppMgr;
 import lmc.lonely.R;
 import lmc.lonely.SysArgs;

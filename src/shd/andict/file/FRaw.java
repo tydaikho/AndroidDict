@@ -1,4 +1,4 @@
-package lmc.lonely.file;
+package shd.andict.file;
 import java.io.InputStream;
 import java.util.Scanner;
 

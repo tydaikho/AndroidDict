@@ -1,4 +1,4 @@
-package lmc.lonely.file;
+package shd.andict.file;
 import lmc.lonely.R;
 import android.app.NotificationManager;
 import android.content.SharedPreferences;

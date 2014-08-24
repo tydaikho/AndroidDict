@@ -1,4 +1,4 @@
-package lmc.lonely.file;
+package shd.andict.file;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -24,7 +24,11 @@ public class FJson extends Activity implements OnClickListener {
 	private Button json_comx = null;
 	private Button json_prase = null;
 	private Button json_gson = null;
+	private Button json_gson2 = null;
+	private Button json_gson3 = null;
+	private Button json_gson4 = null;
 	private TextView json_res = null;
+	private TextView json_res_gson = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +37,12 @@ public class FJson extends Activity implements OnClickListener {
         json_comx = (Button) super.findViewById(R.id.json_comx);
         json_prase = (Button) super.findViewById(R.id.json_prase);
         json_gson = (Button) super.findViewById(R.id.json_gson);
+        json_gson2 = (Button) super.findViewById(R.id.json_gson2);
+        json_gson3 = (Button) super.findViewById(R.id.json_gson3);
+        json_gson4 = (Button) super.findViewById(R.id.json_gson4);
    
         json_res = (TextView) super.findViewById(R.id.json_res);
+        json_res_gson = (TextView) super.findViewById(R.id.json_res_gson);
         json_simp.setOnClickListener(this);
         json_comx.setOnClickListener(this);
         json_prase.setOnClickListener(this);
@@ -126,10 +134,14 @@ public class FJson extends Activity implements OnClickListener {
 				String data = "{\"id\": 100,\"body\": \"It is my post\",\"number\": 0.13,\"created_at\": \"2014-05-22 19:12:38\"}";
 				Gson gson = new Gson();
 				Foo foo = gson.fromJson(data, Foo.class);
-				json_res.setText(foo.body);
+				json_res_gson.setText(
+						"id:"+foo.id+",\n"+
+						"body:"+foo.body+",\n"+
+						"number:"+foo.number+",\n"+
+						"create_at:"+foo.created_at);
 			}
 			catch (Exception e){
-				json_res.setText("解析JSON数组失败");
+				json_res_gson.setText("解析JSON数组失败");
 				e.printStackTrace();
 			}
 		}

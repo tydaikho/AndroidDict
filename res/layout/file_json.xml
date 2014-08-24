@@ -7,7 +7,12 @@
     <LinearLayout 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
+	    android:orientation="vertical">
+    <TextView
+		android:id="@+id/json_title"
+		android:text="JSON的普通使用"
+		android:layout_width="fill_parent"
+	   	android:layout_height="wrap_content"/>
         <Button
 		  	android:id="@+id/json_simp"
 		  	android:text="@string/json_simp"
@@ -20,20 +25,56 @@
 			android:layout_width="wrap_content"
 		   	android:layout_height="wrap_content"
 		   	android:layout_weight="1"/>
-    </LinearLayout>
+        
     <Button
 		android:id="@+id/json_prase"
 		android:text="@string/json_prase"
-		android:layout_width="160dp"
+		android:layout_width="wrap_content"
 	   	android:layout_height="wrap_content"/>
-    <Button 
-        android:id="@+id/json_gson"
-        android:text="使用GSON解析JSON"
-        android:layout_width="wrap_content"
-        android:layout_height ="wrap_content"
-        />"
     <TextView
 		android:id="@+id/json_res"
 		android:layout_width="fill_parent"
 	   	android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+	    android:orientation="vertical">
+
+    
+    <TextView
+		android:id="@+id/json_title_gson"
+		android:text="使用GSON"
+		android:layout_width="fill_parent"
+	   	android:layout_height="wrap_content"/>
+    <Button 
+        android:id="@+id/json_gson"
+        android:text="使用GSON解析JSON单个对象"
+        android:layout_width="fill_parent"
+        android:layout_height ="wrap_content"
+        />
+    <Button 
+        android:id="@+id/json_gson2"
+        android:text="使用GSON解析JSON单个对象,对象含Data数据类型"
+        android:layout_width="fill_parent"
+        android:layout_height ="wrap_content"
+        />
+    <Button 
+        android:id="@+id/json_gson3"
+        android:text="对象嵌套"
+        android:layout_width="wrap_content"
+        android:layout_height ="wrap_content"
+        />
+    <Button 
+        android:id="@+id/json_gson4"
+        android:text="对象数组"
+        android:layout_width="wrap_content"
+        android:layout_height ="wrap_content"
+        />
+    <TextView
+		android:id="@+id/json_res_gson"
+		android:layout_width="fill_parent"
+	   	android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

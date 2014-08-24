@@ -246,37 +246,37 @@
 	        android:name=".lay.LayTab2"
 	        android:label="@string/lay_tab"/>
         <activity
-	        android:name=".file.FApp"
+	        android:name="shd.andict.file.FApp"
 	        android:label="@string/file_fil"/>
         <activity
-	        android:name=".file.FJson"
+	        android:name="shd.andict.file.FJson"
 	        android:label="@string/file_json"/>
         <activity
-	        android:name=".file.FLkFiles"
+	        android:name="shd.andict.file.FLkFiles"
 	        android:label="@string/file_lok"/>
         <activity
-	        android:name=".file.FMp3"
+	        android:name="shd.andict.file.FMp3"
 	        android:label="@string/file_mus"/>
         <activity
-	        android:name=".file.FOper"
+	        android:name="shd.andict.file.FOper"
 	        android:label="@string/file_oper"/>
         <activity
-	        android:name=".file.FProp"
+	        android:name="shd.andict.file.FProp"
 	        android:label="@string/file_prop"/>
         <activity
-	        android:name=".file.FRaw"
+	        android:name="shd.andict.file.FRaw"
 	        android:label="@string/file_raw"/>
         <activity
-	        android:name=".file.FSd"
+	        android:name="shd.andict.file.FSd"
 	        android:label="@string/file_sd"/>
         <activity
-	        android:name=".file.FShalay"
+	        android:name="shd.andict.file.FShalay"
 	        android:label="@string/file_sharelay"/>
         <activity
-	        android:name=".file.FShare"
+	        android:name="shd.andict.file.FShare"
 	        android:label="@string/file_share"/>
         <activity
-	        android:name=".file.FXml"
+	        android:name="shd.andict.file.FXml"
 	        android:label="@string/file_xml"/>
         <activity
 	        android:name=".db.DbParDo"
