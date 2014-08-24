@@ -1,6 +1,8 @@
 package lmc.lonely.base;
 import java.lang.reflect.Field;
 import java.util.Random;
+
+import lmc.lonely.R;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +17,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.widget.Button;
 import android.widget.EditText;
-import lmc.lonely.R;
 public class BEditText extends Activity implements OnClickListener {
 	private EditText edit_face = null;
 	private Button edit_add = null;
@@ -46,7 +47,7 @@ public class BEditText extends Activity implements OnClickListener {
         edit_focused.setOnFocusChangeListener(new OnFocusChangeListener() {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
-				edit_focused.setText(hasFocus?"»ñµÃ½¹µã":"Ê§È¥½¹µã");
+				edit_focused.setText(hasFocus?"ï¿½ï¿½Ã½ï¿½ï¿½ï¿½":"Ê§È¥ï¿½ï¿½ï¿½ï¿½");
 			}
 		});
     }
@@ -64,7 +65,7 @@ public class BEditText extends Activity implements OnClickListener {
 			}
 		}else if(v.getId()==R.id.edit_check){
 			if(edit_num.getText().toString().equals("")){
-				edit_num.setError("ÇëÊäÈëÄÚÈÝ");
+				edit_num.setError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			}
 		}else if(v.getId()==R.id.edit_blank){
 			edit_blank.setText("");

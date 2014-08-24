@@ -1,7 +1,7 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
-import lmc.lonely.R;
 public class BView extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,6 @@ import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.lonely.R;
 public class BGalley3 extends Activity implements OnClickListener {
 	private int index = 0;
 	private ImageButton gal_3pre = null;

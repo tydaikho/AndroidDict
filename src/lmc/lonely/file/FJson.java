@@ -3,21 +3,27 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Date;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.utils.OtherUtils;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.utils.OtherUtils;
+
+import com.google.gson.Gson;
 public class FJson extends Activity implements OnClickListener {
 	private Button json_simp = null;
 	private Button json_comx = null;
 	private Button json_prase = null;
+	private Button json_gson = null;
 	private TextView json_res = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,10 +32,13 @@ public class FJson extends Activity implements OnClickListener {
         json_simp = (Button) super.findViewById(R.id.json_simp);
         json_comx = (Button) super.findViewById(R.id.json_comx);
         json_prase = (Button) super.findViewById(R.id.json_prase);
+        json_gson = (Button) super.findViewById(R.id.json_gson);
+   
         json_res = (TextView) super.findViewById(R.id.json_res);
         json_simp.setOnClickListener(this);
         json_comx.setOnClickListener(this);
         json_prase.setOnClickListener(this);
+        json_gson.setOnClickListener(this);
     }
 	@Override
 	public void onClick(View v) {
@@ -96,12 +105,13 @@ public class FJson extends Activity implements OnClickListener {
 			}
 		}else if(v.getId()==R.id.json_prase){
 			try{
-				String data = "[{\"name\":\"上而求索\",\"age\":20},{\"name\":\"lmc\",\"age\":30}]";
-				JSONArray ja = new JSONArray(data);
+				String data = "[{\"name\":\"上而求索\",\"age\":20}," +
+						"{\"name\":\"lmc\",\"age\":30}]";
+				JSONArray ja = new JSONArray(data);//解析到JSONObject的数组类中
 				JSONObject jobj = null;
 				StringBuffer sb = new StringBuffer();
 				for(int i=0;i<ja.length();i++){
-					jobj = ja.getJSONObject(i);
+					jobj = ja.getJSONObject(i);//从数组类JSONArray中获取JSONObject
 					sb.append("name:"+jobj.getString("name")+" age:"+jobj.getInt("age")+"\n");
 				}
 				sb.append("共"+ja.length()+"条记录");
@@ -111,5 +121,18 @@ public class FJson extends Activity implements OnClickListener {
 				e.printStackTrace();
 			}
 		}
+		else if (v.getId()==R.id.json_gson){
+			try{
+				String data = "{\"id\": 100,\"body\": \"It is my post\",\"number\": 0.13,\"created_at\": \"2014-05-22 19:12:38\"}";
+				Gson gson = new Gson();
+				Foo foo = gson.fromJson(data, Foo.class);
+				json_res.setText(foo.body);
+			}
+			catch (Exception e){
+				json_res.setText("解析JSON数组失败");
+				e.printStackTrace();
+			}
+		}
 	}
 }
+

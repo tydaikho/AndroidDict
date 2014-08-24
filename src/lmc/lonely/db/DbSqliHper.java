@@ -1,10 +1,11 @@
 package lmc.lonely.db;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lmc.lonely.SysArgs;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import lmc.lonely.SysArgs;
 public class DbSqliHper{
 	private SQLiteDatabase db = null;
 	public DbSqliHper(Context con) {

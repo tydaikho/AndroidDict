@@ -1,11 +1,11 @@
 package lmc.lonely.sys;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import lmc.lonely.R;
 public class SysServ extends Activity implements OnClickListener {
 	private Button serv_start = null;
 	private Button serv_end = null;

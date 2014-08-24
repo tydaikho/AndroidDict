@@ -1,4 +1,6 @@
 package lmc.lonely.db;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -8,8 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
 public class DbParDo extends Activity implements OnClickListener {
 	
 	private int id = 1;

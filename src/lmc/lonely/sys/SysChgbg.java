@@ -1,4 +1,5 @@
 package lmc.lonely.sys;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class SysChgbg extends Activity implements OnLongClickListener {
 	private TextView chgbg_bg = null;
 	private ImageView chgbg_img = null;
@@ -21,7 +21,7 @@ public class SysChgbg extends Activity implements OnLongClickListener {
         chgbg_bg = (TextView) super.findViewById(R.id.chgbg_bg);
         chgbg_img = (ImageView) super.findViewById(R.id.chgbg_img);
         chgbg_img.setOnLongClickListener(this);
-        Toast.makeText(this,"È«ÆÁÉèÖÃ",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 	}
 	@Override
 	public boolean onLongClick(View v) {
@@ -29,10 +29,10 @@ public class SysChgbg extends Activity implements OnLongClickListener {
 			try{
 				this.clearWallpaper();
 				this.setWallpaper(chgbg_img.getResources().openRawResource(R.drawable.icos_chgbg));
-				chgbg_bg.setText("¸ü¸ÄÏµÍ³±³¾°³É¹¦");
+				chgbg_bg.setText("ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 				return true;
 			}catch(Exception e){
-				chgbg_bg.setText("¸ü¸ÄÏµÍ³±³¾°Ê§°Ü");
+				chgbg_bg.setText("ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}

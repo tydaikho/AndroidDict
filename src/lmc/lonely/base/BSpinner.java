@@ -1,23 +1,24 @@
 package lmc.lonely.base;
 import java.util.ArrayList;
 import java.util.List;
+
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import lmc.lonely.R;
 public class BSpinner extends Activity {
 	private Spinner spin_color = null;
 	private List<CharSequence>sDatas = null;
 	private ArrayAdapter<CharSequence>sAd = null;
 	private Spinner spin_stu = null;
 	private String prvi = null;
-	private String[][]cDatas = new String[][]{{"Âé³ÇÊÐ","ÎäººÊÐ","»ÆÖÝÇø","ÒË²ýÊÐ","ÎäÑ¨ÊÐ"},
-		{"ÉîÛÚÊÐ","¹ãÖÝÊÐ","¶«Ý¸ÊÐ"},{"³¯ÑôÇø","¶«³ÇÇø","Æ½¹ÈÇø"},{"ÆÖ¶«Çø","ãÉÐÐÇø","ÑîÆÖÇø"}};
+	private String[][]cDatas = new String[][]{{"ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½äººï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½Ë²ï¿½ï¿½ï¿½","ï¿½ï¿½Ñ¨ï¿½ï¿½"},
+		{"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½Ý¸ï¿½ï¿½"},{"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","Æ½ï¿½ï¿½ï¿½ï¿½"},{"ï¿½Ö¶ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"}};
 	private Spinner spin_prvi = null;
 	private Spinner spin_city = null;
 	private TextView spin_res = null;
@@ -29,16 +30,16 @@ public class BSpinner extends Activity {
         spin_prvi = (Spinner) super.findViewById(R.id.spin_prvi);
         spin_city = (Spinner) super.findViewById(R.id.spin_city);
         spin_res = (TextView) super.findViewById(R.id.spin_res);
-        spin_color.setPrompt("ÇëÑ¡Ôñ");
+        spin_color.setPrompt("ï¿½ï¿½Ñ¡ï¿½ï¿½");
         spin_color.setAdapter(ArrayAdapter.createFromResource(this,R.array.spin_color,android.R.layout.simple_spinner_item)); 
         sDatas = new ArrayList<CharSequence>();
-        sDatas.add("¸ßÖÐÉú");
-        sDatas.add("´óÑ§Éú");
-        sDatas.add("ÑÐ¾¿Éú");
-        sDatas.add("²©Ê¿ºó");
+        sDatas.add("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        sDatas.add("ï¿½ï¿½Ñ§ï¿½ï¿½");
+        sDatas.add("ï¿½Ð¾ï¿½ï¿½ï¿½");
+        sDatas.add("ï¿½ï¿½Ê¿ï¿½ï¿½");
         sAd = new ArrayAdapter<CharSequence>(this,android.R.layout.simple_spinner_item,sDatas);
         sAd.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin_stu.setPrompt("ÇëÑ¡Ôñ");
+        spin_stu.setPrompt("ï¿½ï¿½Ñ¡ï¿½ï¿½");
         spin_stu.setAdapter(sAd);
         spin_prvi.setOnItemSelectedListener(new OnItemSelectedListener() {
 			@Override

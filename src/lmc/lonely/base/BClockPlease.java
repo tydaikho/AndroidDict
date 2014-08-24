@@ -1,15 +1,16 @@
 package lmc.lonely.base;
 import java.util.Calendar;
+
+import lmc.lonely.R;
+import lmc.utils.TimeUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
-import lmc.lonely.R;
-import lmc.utils.TimeUtils;
 public class BClockPlease extends Activity implements OnClickListener {
 	private DatePicker clock_cstart = null;
 	private DatePicker clock_cstop = null;

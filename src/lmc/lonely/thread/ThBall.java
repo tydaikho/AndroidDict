@@ -1,11 +1,11 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
+import lmc.utils.OtherUtils;
+import lmc.view.ThBallView;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import lmc.lonely.R;
-import lmc.utils.OtherUtils;
-import lmc.view.ThBallView;
 public class ThBall extends Activity {
 	private static final int flag = 0x01;
 	private ThBallView view = null;

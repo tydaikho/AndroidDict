@@ -1,14 +1,14 @@
 package lmc.lonely.lay;
+import lmc.lonely.R;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.utils.OtherUtils;
 public class LayTab2 extends Activity {
-	private String[][]datas = new String[][]{{"开发者","联系电话","QQ"},{"上而求索","13669032128","1138789752"}};
+	private String[][]datas = new String[][]{{"锟斤拷锟斤拷锟斤拷","锟斤拷系锟界话","QQ"},{"锟较讹拷锟斤拷锟斤拷","13669032128","1138789752"}};
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

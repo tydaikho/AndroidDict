@@ -3,15 +3,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class BListView5 extends ListActivity {
 	private List<Map<String,String>>dList = null;
 	private SimpleAdapter sAd = null;
@@ -32,6 +33,6 @@ public class BListView5 extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView lv, View v, int pos, long id) {
 		super.onListItemClick(lv, v, pos, id);
-		Toast.makeText(this,"±»Ñ¡ID:"+id,Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"ï¿½ï¿½Ñ¡ID:"+id,Toast.LENGTH_SHORT).show();
 	}
 }

@@ -3,14 +3,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
 public class FOper extends Activity {
 	private String fName = "lonely.txt";
 	private TextView oper_msg = null;
@@ -20,21 +21,21 @@ public class FOper extends Activity {
         super.setContentView(R.layout.file_oper);
         oper_msg = (TextView) super.findViewById(R.id.oper_msg);
         StringBuffer sb = new StringBuffer();
-        sb.append("ÊÇ·ñ°²×°SD¿¨:"+Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)+"\n");
-        sb.append("SD¿¨¾ø¶ÔÂ·¾¶:"+Environment.getExternalStorageDirectory().getAbsolutePath()+"\n");
+        sb.append("ï¿½Ç·ï¿½×°SDï¿½ï¿½:"+Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)+"\n");
+        sb.append("SDï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½:"+Environment.getExternalStorageDirectory().getAbsolutePath()+"\n");
         File app = new File(SysArgs.getAppHome());
-        sb.append("Ó¦ÓÃÄ¿Â¼Ïà¶ÔÂ·¾¶:"+app.getPath()+"\n");
-        sb.append("Ó¦ÓÃÄ¿Â¼¾ø¶ÔÂ·¾¶:"+app.getAbsolutePath()+"\n");
-        sb.append("Ó¦ÓÃË½ÓÐÄ¿Â¼Â·¾¶:"+super.getFilesDir()+"\n");
+        sb.append("Ó¦ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½:"+app.getPath()+"\n");
+        sb.append("Ó¦ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½:"+app.getAbsolutePath()+"\n");
+        sb.append("Ó¦ï¿½ï¿½Ë½ï¿½ï¿½Ä¿Â¼Â·ï¿½ï¿½:"+super.getFilesDir()+"\n");
         try{
 			FileOutputStream fos = super.openFileOutput(fName,Activity.MODE_APPEND);
-			fos.write((System.currentTimeMillis()+SysConts.appName+"»¶Ó­Äã\n").getBytes());
+			fos.write((System.currentTimeMillis()+SysConts.appName+"ï¿½ï¿½Ó­ï¿½ï¿½\n").getBytes());
 			fos.flush();
 			fos.close();
-			sb.append("´´½¨Ó¦ÓÃÎÄ¼þ³É¹¦,´æÓÚ"+super.getFilesDir()+"/lonely.txt\n");
+			sb.append("ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½,ï¿½ï¿½ï¿½ï¿½"+super.getFilesDir()+"/lonely.txt\n");
 		}catch(Exception e){
 			e.printStackTrace();
-			sb.append("´´½¨Ó¦ÓÃÎÄ¼þÊ§°Ü\n");
+			sb.append("ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½\n");
 		}
         try{
 			FileInputStream fis = super.openFileInput(fName);
@@ -44,13 +45,13 @@ public class FOper extends Activity {
 			while((len=fis.read(data))!=-1){
 				bais.write(data,0,len);
 			}
-			sb.append("¶ÁÈ¡Ó¦ÓÃÎÄ¼þ³É¹¦\n");
+			sb.append("ï¿½ï¿½È¡Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½\n");
 			sb.append(bais.toString());
 			bais.close();
 			fis.close();
 		}catch(Exception e){
 			e.printStackTrace();
-			sb.append("¶ÁÈ¡Ó¦ÓÃÎÄ¼þÊ§°Ü");
+			sb.append("ï¿½ï¿½È¡Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½");
 		}
         oper_msg.setText(sb.toString());
         oper_msg.setMovementMethod(ScrollingMovementMethod.getInstance());

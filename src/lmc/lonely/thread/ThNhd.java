@@ -1,9 +1,9 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import lmc.lonely.R;
 public class ThNhd extends Activity implements Runnable {
 	private int[]colors = new int[]{0xFFFF0000,0xFF00FF00,0xFF0000FF,0xFFFF00FF,0xFF00FFFF};
 	private int[]pointers = new int[]{1,2,3,4,0};

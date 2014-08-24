@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -11,23 +12,26 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+import lmc.entity.Person;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.FXmlPullHelper;
+import lmc.utils.FXmlSaxHelper;
+import lmc.utils.OtherUtils;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.entity.Person;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
-import lmc.utils.FXmlPullHelper;
-import lmc.utils.FXmlSaxHelper;
 public class FXml extends Activity implements OnClickListener {
 	private String fName = null;
 	private Button xml_dcreate = null;
@@ -76,16 +80,16 @@ public class FXml extends Activity implements OnClickListener {
 				Transformer tf = TransformerFactory.newInstance().newTransformer();
 				tf.setOutputProperty(OutputKeys.ENCODING,"UTF-8");
 				tf.transform(sour,res);
-				xml_res.setText("Dom´´½¨XML³É¹¦\n´æÓÚ:"+fName);
+				xml_res.setText("Domï¿½ï¿½ï¿½ï¿½XMLï¿½É¹ï¿½\nï¿½ï¿½ï¿½ï¿½:"+fName);
 			}catch(Exception e){
-				xml_res.setText("Dom´´½¨XMLÊ§°Ü");
+				xml_res.setText("Domï¿½ï¿½ï¿½ï¿½XMLÊ§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.xml_dread){
 			try{
 				File dom = new File(fName);
 				if(!dom.exists()){
-					xml_res.setText("XMLÎÄ¼þ²»´æÔÚ");
+					xml_res.setText("XMLï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 					return;
 				}
 				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(dom);
@@ -93,14 +97,14 @@ public class FXml extends Activity implements OnClickListener {
 				StringBuffer sb = new StringBuffer();
 				for(int i=0;i<nls.getLength();i++){
 					Element e = (Element)nls.item(i);
-					sb.append("--¿ª·¢Õß:"+e.getElementsByTagName("name").item(0).getFirstChild().getNodeValue()+"\n");
-					sb.append("--ÁªÏµµç»°:"+e.getElementsByTagName("phone").item(0).getFirstChild().getNodeValue()+"\n");
+					sb.append("--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+e.getElementsByTagName("name").item(0).getFirstChild().getNodeValue()+"\n");
+					sb.append("--ï¿½ï¿½Ïµï¿½ç»°:"+e.getElementsByTagName("phone").item(0).getFirstChild().getNodeValue()+"\n");
 					sb.append("--QQ:"+e.getElementsByTagName("qq").item(0).getFirstChild().getNodeValue()+"\n");
 				}
 				sb.deleteCharAt(sb.length()-1);
 				xml_res.setText(sb.toString());
 			}catch(Exception e){
-				xml_res.setText("Dom½âÎöXMLÊ§°Ü!ÇëÈ·ÈÏXMLÎÄ¼þÒÑ´´½¨");
+				xml_res.setText("Domï¿½ï¿½ï¿½ï¿½XMLÊ§ï¿½ï¿½!ï¿½ï¿½È·ï¿½ï¿½XMLï¿½Ä¼ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.xml_dread2){
@@ -127,10 +131,10 @@ public class FXml extends Activity implements OnClickListener {
 					}
 					sb.append("Person[id="+id+",name="+name+",age="+age+"]\n");
 				}
-				sb.append("¹²"+nls.getLength()+"Ìõ¼ÇÂ¼");
+				sb.append("ï¿½ï¿½"+nls.getLength()+"ï¿½ï¿½ï¿½ï¿½Â¼");
 				xml_res.setText(sb.toString());
 			}catch(Exception e){
-				xml_res.setText("Dom½âÎöXMLÊ§°Ü");
+				xml_res.setText("Domï¿½ï¿½ï¿½ï¿½XMLÊ§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.xml_saxread){
@@ -144,11 +148,11 @@ public class FXml extends Activity implements OnClickListener {
 	        	for(HashMap<String,String>map:res){
 	        		sb.append(map.toString()+"\n");
 	        	}
-	        	sb.append("¹²"+res.size()+"Ìõ¼ÇÂ¼");
+	        	sb.append("ï¿½ï¿½"+res.size()+"ï¿½ï¿½ï¿½ï¿½Â¼");
 	        	is.close();
 	        	xml_res.setText(sb.toString());
 			}catch(Exception e){
-				xml_res.setText("Sax½âÎöXMLÊ§°Ü");
+				xml_res.setText("Saxï¿½ï¿½ï¿½ï¿½XMLÊ§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.xml_pullread){
@@ -159,11 +163,11 @@ public class FXml extends Activity implements OnClickListener {
 				for(Person person:res){
 					sb.append(person.toString()+"\n");
 				}
-				sb.append("¹²"+res.size()+"Ìõ¼ÇÂ¼");
+				sb.append("ï¿½ï¿½"+res.size()+"ï¿½ï¿½ï¿½ï¿½Â¼");
 				is.close();
 				xml_res.setText(sb.toString());
 			}catch(Exception e){
-				xml_res.setText("Pull½âÎöXMLÊ§°Ü");
+				xml_res.setText("Pullï¿½ï¿½ï¿½ï¿½XMLÊ§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}

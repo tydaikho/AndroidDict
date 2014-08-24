@@ -2,6 +2,8 @@ package lmc.lonely.base;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import lmc.lonely.R;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +15,6 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import lmc.lonely.R;
 public class BAnimation3 extends ListActivity implements OnClickListener {
 	private Button anima_abjdh = null;
 	private ListView anima_alist = null;

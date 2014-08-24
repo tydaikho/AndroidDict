@@ -1,5 +1,10 @@
 package lmc.lonely.sys;
 import java.util.ArrayList;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -7,10 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class SysXtcxMain extends Activity implements OnClickListener {
 	private Intent it = null;
 	private Button xtcx_bd = null;
@@ -64,13 +65,13 @@ public class SysXtcxMain extends Activity implements OnClickListener {
 			it = new Intent(Intent.ACTION_SENDTO);
 			it.setType("vnd.android-dir/mms-sms");
 			it.setData(Uri.parse("smsto:"+SysConts.phone));
-			it.putExtra("sms_body",SysConts.appName+"ÓÉ"+SysConts.owner+"¿ª·¢,¾´ÇëÔÞÖú¿ª·¢Õß");
+			it.putExtra("sms_body",SysConts.appName+"ï¿½ï¿½"+SysConts.owner+"ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			this.startActivity(it);
 		}else if(v.getId()==R.id.xtcx_cx){
 			it = new Intent(Intent.ACTION_SEND);
 			it.setType("image/*");
 			it.putExtra("address",SysConts.phone);
-			it.putExtra("sms_body",SysConts.appName+"ÓÉ"+SysConts.owner+"¿ª·¢,¾´ÇëÔÞÖú¿ª·¢Õß");
+			it.putExtra("sms_body",SysConts.appName+"ï¿½ï¿½"+SysConts.owner+"ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			ArrayList<String>imgs = OtherUtils.getSdFile(SysArgs.SD,SysConts.fms);
 			if(imgs.size()>0){
 				it.putExtra(Intent.EXTRA_STREAM,Uri.parse("file://"+imgs.get(0)));
@@ -81,24 +82,24 @@ public class SysXtcxMain extends Activity implements OnClickListener {
 			it.setType("plain/text");
 			it.setData(Uri.parse("mailto:"+SysConts.mail));
 			it.putExtra(Intent.EXTRA_EMAIL,new String[]{SysConts.mail});
-			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ÄãÔÞÖú"+SysConts.appName);
-			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ÓÉ"+SysConts.owner+"¿ª·¢,¾´ÇëÔÞÖú¿ª·¢Õß");
+			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+SysConts.appName);
+			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ï¿½ï¿½"+SysConts.owner+"ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			this.startActivity(it);
 		}else if(v.getId()==R.id.xtcx_yjyes){
 			it = new Intent(Intent.ACTION_SEND);
 			it.setType("image/*");
 			it.setType("message/rfc882");
-			//ÉèÖÃÊÕ¼þÕß/³­ËÍÕâ/ÃÔËÍÕß
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			it.putExtra(Intent.EXTRA_EMAIL,new String[]{SysConts.mail});
 			it.putExtra(Intent.EXTRA_CC,new String[]{SysConts.mail});
 			it.putExtra(Intent.EXTRA_BCC,new String[]{SysConts.mail});
-			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ÄãÔÞÖú"+SysConts.appName);
-			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ÓÉ"+SysConts.owner+"¿ª·¢,¾´ÇëÔÞÖú¿ª·¢Õß");
+			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+SysConts.appName);
+			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ï¿½ï¿½"+SysConts.owner+"ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			ArrayList<String>imgs = OtherUtils.getSdFile(SysArgs.SD,SysConts.fms);
 			if(imgs.size()>0){
 				it.putExtra(Intent.EXTRA_STREAM,Uri.parse("file://"+imgs.get(0)));
 			}
-			Intent.createChooser(it,"ÇëÑ¡ÔñÓÊ¼þ¿Í»§¶Ë");
+			Intent.createChooser(it,"ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Í»ï¿½ï¿½ï¿½");
 			this.startActivity(it);
 		}else if(v.getId()==R.id.xtcx_yjmul){
 			it = new Intent(Intent.ACTION_SEND_MULTIPLE);
@@ -107,8 +108,8 @@ public class SysXtcxMain extends Activity implements OnClickListener {
 			it.putExtra(Intent.EXTRA_EMAIL,new String[]{SysConts.mail});
 			it.putExtra(Intent.EXTRA_CC,new String[]{SysConts.mail});
 			it.putExtra(Intent.EXTRA_BCC,new String[]{SysConts.mail});
-			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ÄãÔÞÖú"+SysConts.appName);
-			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ÓÉ"+SysConts.owner+"¿ª·¢,¾´ÇëÔÞÖú¿ª·¢Õß");
+			it.putExtra(Intent.EXTRA_SUBJECT,"Ð»Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+SysConts.appName);
+			it.putExtra(Intent.EXTRA_TEXT,SysConts.appName+"ï¿½ï¿½"+SysConts.owner+"ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			ArrayList<Uri>pics = new ArrayList<Uri>();
 			ArrayList<String>imgs = OtherUtils.getSdFile(SysArgs.SD,SysConts.fms);
 			if(imgs.size()>1){
@@ -116,12 +117,12 @@ public class SysXtcxMain extends Activity implements OnClickListener {
 				pics.add(Uri.parse("file://"+imgs.get(1)));
 			}
 			it.putParcelableArrayListExtra(Intent.EXTRA_STREAM,pics);
-			Intent.createChooser(it,"ÇëÑ¡ÔñÓÊ¼þ¿Í»§¶Ë");
+			Intent.createChooser(it,"ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Í»ï¿½ï¿½ï¿½");
 			this.startActivity(it);
 		}else if(v.getId()==R.id.xtcx_tpll){
 			it = new Intent(Intent.ACTION_GET_CONTENT);
 			it.setType("image/*");
-			this.startActivity(Intent.createChooser(it,"ÇëÑ¡Ôñ"));
+			this.startActivity(Intent.createChooser(it,"ï¿½ï¿½Ñ¡ï¿½ï¿½"));
 		}
 	}
 }

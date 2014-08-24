@@ -1,5 +1,6 @@
 package lmc.adater;
 import java.util.List;
+
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.view.View;

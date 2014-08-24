@@ -1,11 +1,11 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import lmc.lonely.R;
 public class BAnimation0 extends Activity implements OnClickListener {
 	private Button anima_item1 = null;
 	private Button anima_item2 = null;

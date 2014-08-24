@@ -1,12 +1,12 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import lmc.lonely.R;
+import android.widget.TextView;
 public class BSeekBar extends Activity {
 	private SeekBar bar_seek = null;
     private TextView bar_msg = null;
@@ -23,15 +23,15 @@ public class BSeekBar extends Activity {
         bar_seek.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
 			public void onStopTrackingTouch(SeekBar bar) {
-				bar_msg.append("Í£Ö¹ÍÏ×§;¿Ì¶È:"+bar.getProgress()+"\n");
+				bar_msg.append("Í£Ö¹ï¿½ï¿½×§;ï¿½Ì¶ï¿½:"+bar.getProgress()+"\n");
 			}
 			@Override
 			public void onStartTrackingTouch(SeekBar bar) {
-				bar_msg.append("¿ªÊ¼ÍÏ×§;¿Ì¶È:"+bar.getProgress()+"\n");
+				bar_msg.append("ï¿½ï¿½Ê¼ï¿½ï¿½×§;ï¿½Ì¶ï¿½:"+bar.getProgress()+"\n");
 			}
 			@Override
 			public void onProgressChanged(SeekBar bar, int prog, boolean formUser) {
-				bar_msg.append("ÕýÔÚÍÏ×§;¿Ì¶È:"+prog+" ÊÇ·ñÎªÓÃ»§»¬¶¯:"+formUser+"\n");
+				bar_msg.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×§;ï¿½Ì¶ï¿½:"+prog+" ï¿½Ç·ï¿½Îªï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½:"+formUser+"\n");
 			}
 		});
         bar_msg.setMovementMethod(ScrollingMovementMethod.getInstance());

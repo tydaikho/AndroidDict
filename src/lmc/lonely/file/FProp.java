@@ -1,4 +1,9 @@
 package lmc.lonely.file;
+import lmc.lonely.AppMgr;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.Wel;
+import lmc.view.ColorPicker;
 import android.R.color;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,11 +18,6 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.lonely.AppMgr;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.Wel;
-import lmc.view.ColorPicker;
 public class FProp extends Activity implements OnClickListener {
 	private int bg = 0xFFFFCCFF;
 	private EditText prop_url = null;
@@ -51,27 +51,27 @@ public class FProp extends Activity implements OnClickListener {
     @Override
     public void onBackPressed() {
     	Dialog dia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).
-    		setTitle("±£´æÉèÖÃ").setMessage("Ñ¡Ôñ±£´æ²Ù×÷?").
-    	    setPositiveButton("ÉèÖÃ",new DialogInterface.OnClickListener() {
+    		setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½").setMessage("Ñ¡ï¿½ñ±£´ï¿½ï¿½ï¿½ï¿½?").
+    	    setPositiveButton("ï¿½ï¿½ï¿½ï¿½",new DialogInterface.OnClickListener() {
     			public void onClick(DialogInterface dia, int which) {
     				SysArgs.setUrlHeader(prop_url.getText().toString());
     				SysArgs.setAppHome(prop_home.getText().toString());
     				SysArgs.setBgColor(bg);
     				SysArgs.setMode((prop_mode.getCheckedRadioButtonId()==R.id.prop_mdef)?0:1);
     				SysArgs.setShow(prop_show.isChecked());
-    				Toast.makeText(FProp.this,SysArgs.save(FProp.this)?"±£´æÉèÖÃ³É¹¦":"±£´æÉèÖÃÊ§°Ü",Toast.LENGTH_SHORT).show();
+    				Toast.makeText(FProp.this,SysArgs.save(FProp.this)?"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã³É¹ï¿½":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
     				FProp.this.startActivity(new Intent(FProp.this,Wel.class));
     				((AppMgr) FProp.this.getApplication()).finish();
     			}
-    		}).setNeutralButton("Ä¬ÈÏ",new DialogInterface.OnClickListener() {
+    		}).setNeutralButton("Ä¬ï¿½ï¿½",new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dia, int which) {
 					SysArgs.init();
-					Toast.makeText(FProp.this,SysArgs.save(FProp.this)?"»Ö¸´Ä¬ÈÏÉèÖÃ³É¹¦":"»Ö¸´Ä¬ÈÏÉèÖÃÊ§°Ü",Toast.LENGTH_SHORT).show();
+					Toast.makeText(FProp.this,SysArgs.save(FProp.this)?"ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã³É¹ï¿½":"ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 					FProp.this.startActivity(new Intent(FProp.this,Wel.class));
 					((AppMgr) FProp.this.getApplication()).finish();
 				}
-    		}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+    		}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
     			@Override
     			public void onClick(DialogInterface dia, int which) {
     				FProp.this.startActivity(new Intent(FProp.this,Wel.class));
@@ -84,7 +84,7 @@ public class FProp extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.prop_bg){
-			ColorPicker colDia = new ColorPicker(this,color.white,"ÉèÖÃ±³¾°É«",new ColorPicker.OnColorChangedListener() {
+			ColorPicker colDia = new ColorPicker(this,color.white,"ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½É«",new ColorPicker.OnColorChangedListener() {
 				@Override
 				public void colorChanged(int color) {
 					bg = color;

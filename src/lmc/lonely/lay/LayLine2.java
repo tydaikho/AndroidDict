@@ -1,11 +1,11 @@
 package lmc.lonely.lay;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import lmc.utils.OtherUtils;
 public class LayLine2 extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class LayLine2 extends Activity {
         TextView tv = new TextView(this);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         tv.setLayoutParams(params);
-        tv.setText("³ÌÐòÉú³É");
+        tv.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         tv.setTextSize(12);
         tv.setTextColor(Color.BLACK);
         lay.addView(tv,params);

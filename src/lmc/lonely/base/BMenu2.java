@@ -1,11 +1,11 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class BMenu2 extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -14,20 +14,20 @@ public class BMenu2 extends Activity {
     }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		SubMenu oper = menu.addSubMenu("²Ù×÷");
+		SubMenu oper = menu.addSubMenu("ï¿½ï¿½ï¿½ï¿½");
 		oper.setHeaderIcon(R.drawable.ico_logo);
-		oper.setHeaderTitle("ÇëÑ¡Ôñ");
+		oper.setHeaderTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½");
 		super.getMenuInflater().inflate(R.menu.menu_2men,oper);
-		SubMenu other = menu.addSubMenu("ÆäËû");
+		SubMenu other = menu.addSubMenu("ï¿½ï¿½ï¿½ï¿½");
 		other.setHeaderIcon(R.drawable.ico_logo);
-		other.setHeaderTitle("ÇëÑ¡Ôñ");
-		other.add(Menu.NONE,Menu.FIRST+1,1,"ÏêÇé").setIcon(android.R.drawable.ic_menu_info_details);
-		other.add(Menu.NONE,Menu.FIRST+2,2,"°ïÖú").setIcon(android.R.drawable.ic_menu_help);
-		other.add(Menu.NONE,Menu.FIRST+3,3,"·¢ËÍ").setIcon(android.R.drawable.ic_menu_send);
-		menu.add(Menu.NONE,Menu.FIRST+4,4,"Ìí¼Ó").setIcon(android.R.drawable.ic_menu_add);
-		menu.add(Menu.NONE,Menu.FIRST+5,5,"±à¼­").setIcon(android.R.drawable.ic_menu_edit);
-		menu.add(Menu.NONE,Menu.FIRST+6,6,"±£´æ").setIcon(android.R.drawable.ic_menu_save);
-		menu.add(Menu.NONE,Menu.FIRST+7,7,"É¾³ý").setIcon(android.R.drawable.ic_menu_delete);
+		other.setHeaderTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½");
+		other.add(Menu.NONE,Menu.FIRST+1,1,"ï¿½ï¿½ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_info_details);
+		other.add(Menu.NONE,Menu.FIRST+2,2,"ï¿½ï¿½ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_help);
+		other.add(Menu.NONE,Menu.FIRST+3,3,"ï¿½ï¿½ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_send);
+		menu.add(Menu.NONE,Menu.FIRST+4,4,"ï¿½ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_add);
+		menu.add(Menu.NONE,Menu.FIRST+5,5,"ï¿½à¼­").setIcon(android.R.drawable.ic_menu_edit);
+		menu.add(Menu.NONE,Menu.FIRST+6,6,"ï¿½ï¿½ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_save);
+		menu.add(Menu.NONE,Menu.FIRST+7,7,"É¾ï¿½ï¿½").setIcon(android.R.drawable.ic_menu_delete);
 		return super.onCreateOptionsMenu(menu);
 	}
 	@Override
@@ -37,11 +37,11 @@ public class BMenu2 extends Activity {
 	}
     @Override
 	public void onOptionsMenuClosed(Menu menu) {
-		Toast.makeText(this,"¹Ø±Õ²Ëµ¥",Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"ï¿½Ø±Õ²Ëµï¿½",Toast.LENGTH_SHORT).show();
 	}
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		Toast.makeText(this,"´ò¿ª²Ëµ¥",Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"ï¿½ò¿ª²Ëµï¿½",Toast.LENGTH_SHORT).show();
 		return true;
 	}
 }

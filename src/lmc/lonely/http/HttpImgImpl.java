@@ -1,8 +1,8 @@
 package lmc.lonely.http;
-import java.security.PublicKey;
-import java.util.ArrayList;
-
-import android.R.bool;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,10 +12,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class HttpImgImpl extends Activity implements OnClickListener {
 	private Button updown_dbyres = null;
 	private Button updown_dbydata = null;

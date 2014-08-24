@@ -5,22 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lmc.lonely.R;
-
-
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
-import android.provider.ContactsContract.PhoneLookup;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

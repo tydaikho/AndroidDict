@@ -4,19 +4,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.lonely.R;
 public class BGalley4 extends Activity {
 	private SimpleAdapter adapter = null;
 	private Gallery gal_4show = null;

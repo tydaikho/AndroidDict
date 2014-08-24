@@ -1,4 +1,6 @@
 package lmc.lonely.base;
+import lmc.adater.BGalley1In6Adapter;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -6,14 +8,12 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.adater.BGalley1In6Adapter;
-import lmc.lonely.R;
 public class BGalley6 extends Activity implements OnClickListener {
 	private int index = 0;
 	private ImageButton gal_6pre = null;

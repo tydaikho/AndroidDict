@@ -1,6 +1,9 @@
 package lmc.lonely.db;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +11,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
 public class DbSqliDo extends Activity implements OnClickListener {
 	private DbSqliHper db = null;
 	private TextView sqli_msg = null;
@@ -37,7 +38,7 @@ public class DbSqliDo extends Activity implements OnClickListener {
         sqli_queall = (Button) super.findViewById(R.id.sqli_queall);
         sqli_maxid = (Button) super.findViewById(R.id.sqli_maxid);
         sqli_count = (Button) super.findViewById(R.id.sqli_count);
-        sqli_msg.setText("Êý¾Ý¿âÎÄ¼þ´æÓÚ:/data/data/"+super.getApplication().getPackageName()+"/databases/"+SysArgs.dbName);
+        sqli_msg.setText("ï¿½ï¿½Ý¿ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½:/data/data/"+super.getApplication().getPackageName()+"/databases/"+SysArgs.dbName);
         sqli_ctable.setOnClickListener(this);
         sqli_dtable.setOnClickListener(this);
         sqli_insert.setOnClickListener(this);
@@ -51,33 +52,33 @@ public class DbSqliDo extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.sqli_ctable){
-			Toast.makeText(this,db.create()?"´´½¨±í³É¹¦":"´´½¨±íÊ§°Ü",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,db.create()?"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_dtable){
-			Toast.makeText(this,db.drop()?"É¾³ý±í³É¹¦":"É¾³ý±íÊ§°Ü",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,db.drop()?"É¾ï¿½ï¿½ï¿½É¹ï¿½":"É¾ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_insert){
-			int id = db.insert("lmc",(int)(Math.random()*1000),"ÉÏ¶øÇóË÷");
-			Toast.makeText(this,(id!=-1)?"²åÈëÊý¾Ý³É¹¦,·µ»ØID:"+id:"²åÈëÊý¾ÝÊ§°Ü",Toast.LENGTH_SHORT).show();
+			int id = db.insert("lmc",(int)(Math.random()*1000),"ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½");
+			Toast.makeText(this,(id!=-1)?"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½,ï¿½ï¿½ï¿½ï¿½ID:"+id:"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_detele){
-			Toast.makeText(this,db.delete(db.getMaxId())?"É¾³ýÊý¾Ý³É¹¦":"É¾³ýÊý¾ÝÊ§°Ü",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,db.delete(db.getMaxId())?"É¾ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½":"É¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_update){
-			Toast.makeText(this,db.update(db.getMaxId(),"ÐÂÖµ",100,"ok")?"¸üÐÂÊý¾Ý³É¹¦":"¸üÐÂÊý¾ÝÊ§°Ü",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,db.update(db.getMaxId(),"ï¿½ï¿½Öµ",100,"ok")?"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_query){
 			int id = db.getMaxId();
 			HashMap<String,Object>data = db.queryById(id);
 			if(data!=null&&data.size()>0){
-				StringBuffer sb = new StringBuffer("°´ID²éÑ¯:\n");
+				StringBuffer sb = new StringBuffer("ï¿½ï¿½IDï¿½ï¿½Ñ¯:\n");
 				sb.append("Id:"+id+"\n");
 				sb.append("Name:"+data.get("lmc_name")+"\n");
 				sb.append("Age:"+data.get("lmc_age")+"\n");
 				sb.append("Msg:"+data.get("lmc_msg"));
 				Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
 			}else{
-				Toast.makeText(this,"Ã»ÓÐÊý¾Ý",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"Ã»ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}else if(v.getId()==R.id.sqli_queall){
 			ArrayList<HashMap<String,Object>>datas = db.queryAll();
 			if(datas!=null&&datas.size()>0){
-				StringBuffer sb = new StringBuffer("²éÑ¯ËùÓÐ:\n");
+				StringBuffer sb = new StringBuffer("ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½:\n");
 				HashMap<String,Object>data =null;
 				for(int i=0;i<datas.size();i++){
 					data = datas.get(i);
@@ -86,15 +87,15 @@ public class DbSqliDo extends Activity implements OnClickListener {
 					sb.append("Age:"+data.get("lmc_age")+" ");
 					sb.append("Msg:"+data.get("lmc_msg")+"\n");
 				}
-				sb.append("¹²¼Æ:"+datas.size()+"Ìõ");
+				sb.append("ï¿½ï¿½ï¿½ï¿½:"+datas.size()+"ï¿½ï¿½");
 				Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
 			}else{
-				Toast.makeText(this,"Ã»ÓÐÊý¾Ý",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"Ã»ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}else if(v.getId()==R.id.sqli_maxid){
-			Toast.makeText(this,"×î´óID:"+db.getMaxId(),Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"ï¿½ï¿½ï¿½ID:"+db.getMaxId(),Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.sqli_count){
-			Toast.makeText(this,"Êý¾Ý¿âÓÐ"+db.count()+"Ìõ¼ÇÂ¼",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½"+db.count()+"ï¿½ï¿½ï¿½ï¿½Â¼",Toast.LENGTH_SHORT).show();
 		}
 	}
 }

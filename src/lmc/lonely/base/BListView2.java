@@ -2,14 +2,15 @@ package lmc.lonely.base;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class BListView2 extends Activity {
-	private String[][]datas = new String[][]{{"OracleÊý¾Ý¿â","º«Ë³Æ½"},{"J2EE¿ª·¢","º«Ë³Æ½"},{"Android¿ª·¢","ÀîÐË»ª"},{SysConts.appName,SysConts.owner}};
+	private String[][]datas = new String[][]{{"Oracleï¿½ï¿½Ý¿ï¿½","ï¿½ï¿½Ë³Æ½"},{"J2EEï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½Ë³Æ½"},{"Androidï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½Ë»ï¿½"},{SysConts.appName,SysConts.owner}};
 	private List<HashMap<String,String>>dList = null;
 	private SimpleAdapter sAd = null;
 	private ListView list_2view = null;
@@ -24,7 +25,7 @@ public class BListView2 extends Activity {
         	data.put("ico",String.valueOf(R.drawable.icob_list2));
         	data.put("title",datas[j][0]);
         	data.put("auth",datas[j][1]);
-        	data.put("type","Ãâ·Ñ");
+        	data.put("type","ï¿½ï¿½ï¿½");
         	data.put("score",String.valueOf(R.drawable.icob_list3));
         	dList.add(data);
         }

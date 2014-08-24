@@ -2,6 +2,8 @@ package lmc.lonely;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+
+import lmc.lonely.base.BListView6;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +11,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
 import android.widget.Toast;
-import lmc.lonely.base.BListView6;
 public class Wel extends Activity {
 	private ImageView app_wlogo = null;
 	private int alpha = 255;
@@ -32,7 +33,7 @@ public class Wel extends Activity {
 			if(!home.exists()||!home.isDirectory()){
 				home.mkdirs();
 			}
-			File readMe = new File(SysArgs.getAppHome()+"ÇëÔÄ¶Á"+SysConts.appName+"Ê¹ÓÃËµÃ÷.txt");
+			File readMe = new File(SysArgs.getAppHome()+"ï¿½ï¿½ï¿½Ä¶ï¿½"+SysConts.appName+"Ê¹ï¿½ï¿½Ëµï¿½ï¿½.txt");
 			if(!readMe.exists()||readMe.isDirectory()){
 				readMe.createNewFile();
 				InputStream is = super.getResources().openRawResource(R.raw.readme);
@@ -47,7 +48,7 @@ public class Wel extends Activity {
 				fos.close();
 			}
 		}catch(Exception e){
-			Toast.makeText(this,"´´½¨"+SysConts.appName+"Ó¦ÓÃÄ¿Â¼Ê§°Ü!\nÇëÈ·ÈÏ°²×°ÁËSD¿¨",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"ï¿½ï¿½ï¿½ï¿½"+SysConts.appName+"Ó¦ï¿½ï¿½Ä¿Â¼Ê§ï¿½ï¿½!\nï¿½ï¿½È·ï¿½Ï°ï¿½×°ï¿½ï¿½SDï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			e.printStackTrace();
 		}
         app_wlogo = (ImageView) this.findViewById(R.id.app_wlogo);
@@ -79,7 +80,7 @@ public class Wel extends Activity {
 				this.startActivity(new Intent(this,Main.class));
 			}else{
 				Intent it = new Intent(this,BListView6.class);
-				it.putExtra("title",SysConts.appName+"-Ê÷×´Ä£Ê½");
+				it.putExtra("title",SysConts.appName+"-ï¿½ï¿½×´Ä£Ê½");
 				this.startActivity(it);
 			}
 			this.finish();

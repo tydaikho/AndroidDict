@@ -1,4 +1,5 @@
 package lmc.lonely.sys;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class SysBdc extends Activity implements OnClickListener {
 	private Button bdcast_bd = null;
 	private Button bdcast_set = null;
@@ -28,7 +28,7 @@ public class SysBdc extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.bdcast_set){
-			Toast.makeText(this,"¿ÉÊ¹ÓÃEmulator ControlÄ£ÄâÆ÷·¢ËÍ¶ÌÐÅ",Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"ï¿½ï¿½Ê¹ï¿½ï¿½Emulator ControlÄ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			bdmr = new SysBdcSmsRcver();
 			IntentFilter fIt = new IntentFilter();
 			fIt.addAction(SMS_ACTION);

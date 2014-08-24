@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,6 @@ import android.view.animation.Animation.AnimationListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class BAnimation4 extends Activity implements OnClickListener, AnimationListener {
 	private ViewGroup anima_lay4 = null;
 	private Button anima_4tjtp = null;

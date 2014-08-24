@@ -1,4 +1,6 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class ThJumpMain extends Activity implements OnClickListener {
 	private Button jump_sing = null;
 	private Button jump_doub = null;
@@ -28,15 +28,15 @@ public class ThJumpMain extends Activity implements OnClickListener {
     @Override
 	protected void onActivityResult(int req, int res, Intent data) {
     	if(res==RESULT_OK){
-    		StringBuffer sb = new StringBuffer("Ë«ÏòÌø×ª·µ»Ø½á¹û\n");
-    		sb.append("ÇëÇóÂë:"+req+"\n");
-    		sb.append("½á¹û·µ»ØÂë:"+res+"\n");
+    		StringBuffer sb = new StringBuffer("Ë«ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Ø½ï¿½ï¿½\n");
+    		sb.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+req+"\n");
+    		sb.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+res+"\n");
     		sb.append(data.getStringExtra("return"));
 			jump_res.setText(sb.toString());
     	}else if(res==RESULT_CANCELED){
-    		StringBuffer sb = new StringBuffer("Ë«ÏòÌø×ª²Ù×÷È¡Ïû\n");
-    		sb.append("½á¹û·µ»ØÂë:"+res+"\n");
-    		sb.append("ÇëÇóÂë:"+req);
+    		StringBuffer sb = new StringBuffer("Ë«ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½\n");
+    		sb.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+res+"\n");
+    		sb.append("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+req);
     		jump_res.setText(sb.toString());
     	}
     }

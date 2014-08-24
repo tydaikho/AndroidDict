@@ -1,5 +1,11 @@
 package lmc.lonely.base;
 import java.util.List;
+
+import lmc.adater.BGalley5Adapter;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,17 +13,12 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.adater.BGalley5Adapter;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class BGalley5 extends Activity {
 	private List<String>pList = null;
 	private TextView gal_5path = null;
@@ -57,7 +58,7 @@ public class BGalley5 extends Activity {
         	gal_5path.setText(pList.get(0));
         }else{
         	gal_5is.setImageResource(R.drawable.icob_gal01);
-        	gal_5path.setText("SD¿¨Ã»ÓÐÍ¼Æ¬");
+        	gal_5path.setText("SDï¿½ï¿½Ã»ï¿½ï¿½Í¼Æ¬");
         }
     }
 }

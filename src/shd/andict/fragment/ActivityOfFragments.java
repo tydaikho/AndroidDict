@@ -1,9 +1,9 @@
 package shd.andict.fragment;
 
 import lmc.lonely.R;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.os.Bundle;
 import android.view.Display;
 
 public class ActivityOfFragments extends Activity {

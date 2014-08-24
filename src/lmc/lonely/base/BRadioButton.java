@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -6,10 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RadioGroup.OnCheckedChangeListener;
-import lmc.lonely.R;
 public class BRadioButton extends Activity {
 	private RadioGroup radio_sex = null;
 	private RadioButton radio_nan = null;
@@ -33,13 +33,13 @@ public class BRadioButton extends Activity {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				if(checkedId==radio_nan.getId()){
-					radio_res.setText("Ñ¡ÖÐÁË:"+radio_nan.getText().toString());
+					radio_res.setText("Ñ¡ï¿½ï¿½ï¿½ï¿½:"+radio_nan.getText().toString());
 				}else if(checkedId==radio_nv.getId()){
-					radio_res.setText("Ñ¡ÖÐÁË:"+radio_nv.getText().toString());
+					radio_res.setText("Ñ¡ï¿½ï¿½ï¿½ï¿½:"+radio_nv.getText().toString());
 				}else if(checkedId==radio_no.getId()){
-					radio_res.setText("Ñ¡ÖÐÁË:"+radio_no.getText().toString());
+					radio_res.setText("Ñ¡ï¿½ï¿½ï¿½ï¿½:"+radio_no.getText().toString());
 				}else if(checkedId==radio_cus.getId()){
-					radio_res.setText("Ñ¡ÖÐÁË:"+radio_cus.getText().toString());
+					radio_res.setText("Ñ¡ï¿½ï¿½ï¿½ï¿½:"+radio_cus.getText().toString());
 				}
 			}
 		});
@@ -53,9 +53,9 @@ public class BRadioButton extends Activity {
 				int len = radio_sex.getChildCount();
 				for(int i=0;i<len;i++){
 					RadioButton rad = (RadioButton) radio_sex.getChildAt(i);
-					sb.append(rad.getText().toString()+" ±»Ñ¡ÖÐ:"+rad.isChecked()+"\n");
+					sb.append(rad.getText().toString()+" ï¿½ï¿½Ñ¡ï¿½ï¿½:"+rad.isChecked()+"\n");
 				}
-				sb.append("µ¥Ñ¡°´Å¥¸öÊý:"+len);
+				sb.append("ï¿½ï¿½Ñ¡ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½:"+len);
 				Toast.makeText(BRadioButton.this,sb.toString(),Toast.LENGTH_SHORT).show();
 			}
 		});

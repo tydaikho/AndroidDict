@@ -1,18 +1,18 @@
 package lmc.lonely.base;
+import lmc.adater.BListView3Adapter;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
-import lmc.adater.BListView3Adapter;
-import lmc.lonely.R;
+import android.widget.Toast;
 public class BListView3 extends Activity {
 	private ExpandableListView list_3view = null;
 	@Override
@@ -25,27 +25,27 @@ public class BListView3 extends Activity {
         list_3view.setOnGroupClickListener(new OnGroupClickListener() {
 			@Override
 			public boolean onGroupClick(ExpandableListView par, View v, int group, long id) {
-				Toast.makeText(BListView3.this,"µã»÷×é½Úµã\n×é½Úµã:"+group,Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView3.this,"ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½\nï¿½ï¿½Úµï¿½:"+group,Toast.LENGTH_SHORT).show();
 				return false;
 			}
 		});
         list_3view.setOnGroupExpandListener(new OnGroupExpandListener() {
 			@Override
 			public void onGroupExpand(int group) {
-				Toast.makeText(BListView3.this,"×éÕ¹¿ª\n×é½Úµã:"+group,Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView3.this,"ï¿½ï¿½Õ¹ï¿½ï¿½\nï¿½ï¿½Úµï¿½:"+group,Toast.LENGTH_SHORT).show();
 			}
 		});
         list_3view.setOnChildClickListener(new OnChildClickListener() {
 			@Override
 			public boolean onChildClick(ExpandableListView par, View v, int group, int child, long id) {
-				Toast.makeText(BListView3.this,"µã»÷×Ó½Úµã\n×é½Úµã:"+group+",×Ó½Úµã:"+child,Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView3.this,"ï¿½ï¿½ï¿½ï¿½Ó½Úµï¿½\nï¿½ï¿½Úµï¿½:"+group+",ï¿½Ó½Úµï¿½:"+child,Toast.LENGTH_SHORT).show();
 				return false;
 			}
 		});
         list_3view.setOnGroupCollapseListener(new OnGroupCollapseListener() {
 			@Override
 			public void onGroupCollapse(int group) {
-				Toast.makeText(BListView3.this,"×é¹Ø±Õ\n×é½Úµã:"+group,Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView3.this,"ï¿½ï¿½Ø±ï¿½\nï¿½ï¿½Úµï¿½:"+group,Toast.LENGTH_SHORT).show();
 			}
 		});
     }
@@ -56,6 +56,6 @@ public class BListView3 extends Activity {
 		int type = ExpandableListView.getPackedPositionType(eInfo.packedPosition);
 		int group = ExpandableListView.getPackedPositionGroup(eInfo.packedPosition);
 		int child = ExpandableListView.getPackedPositionChild(eInfo.packedPosition);
-		Toast.makeText(this,"ÉÏÏÂÎÄ²Ëµ¥\nÀàÐÍ:"+type+"\n×é½Úµã:"+group+"\n×Ó½Úµã:"+child,Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"ï¿½ï¿½ï¿½ï¿½ï¿½Ä²Ëµï¿½\nï¿½ï¿½ï¿½ï¿½:"+type+"\nï¿½ï¿½Úµï¿½:"+group+"\nï¿½Ó½Úµï¿½:"+child,Toast.LENGTH_SHORT).show();
     }
 }

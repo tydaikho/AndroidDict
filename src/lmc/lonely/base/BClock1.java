@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
@@ -10,11 +11,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.DatePicker;
+import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.TimePicker.OnTimeChangedListener;
-import lmc.lonely.R;
 public class BClock1 extends Activity implements OnClickListener {
 	private Chronometer clock_chr = null;
 	private Button clock_start = null;
@@ -71,7 +71,7 @@ public class BClock1 extends Activity implements OnClickListener {
 			if(resCode==RESULT_OK){
 				String start = data.getCharSequenceExtra("start").toString();
 				String end = data.getCharSequenceExtra("end").toString();
-				clock_msg.setText("¿ªÊ¼Ê±¼ä:"+start+" ½áÊøÊ±¼ä:"+end);
+				clock_msg.setText("ï¿½ï¿½Ê¼Ê±ï¿½ï¿½:"+start+" ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:"+end);
 			}
 		}
 	}
@@ -84,14 +84,14 @@ public class BClock1 extends Activity implements OnClickListener {
 				clock_chr.stop();
 				clock_chr.setBase(SystemClock.elapsedRealtime());
 				break;
-			case R.id.clock_format:clock_chr.setFormat("¸ñÊ½»¯:%s");break;
+			case R.id.clock_format:clock_chr.setFormat("ï¿½ï¿½Ê½ï¿½ï¿½:%s");break;
 			case R.id.clock_please:this.startActivityForResult(new Intent(this,BClockPlease.class),2);break;
 			case R.id.clock_cal:this.startActivity(new Intent(this,BClock2.class));break;
 			case R.id.clock_dia:
 				new DatePickerDialog(this,new OnDateSetListener() {
 					@Override
 					public void onDateSet(DatePicker view, int year, int month, int day) {
-						clock_msg.setText("ÉèÖÃÊ±¼ä:"+year+"-"+(month+1)+"-"+day);
+						clock_msg.setText("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:"+year+"-"+(month+1)+"-"+day);
 					}
 		        },2013,0,27).show();
 				break;
@@ -99,7 +99,7 @@ public class BClock1 extends Activity implements OnClickListener {
 		}
 	}
 	private void setTime(){
-    	clock_msg.setText("µ±Ç°Ê±¿Ì:"+clock_date.getYear()+"-"+(clock_date.getMonth()+1)+"-"+
+    	clock_msg.setText("ï¿½ï¿½Ç°Ê±ï¿½ï¿½:"+clock_date.getYear()+"-"+(clock_date.getMonth()+1)+"-"+
     		clock_date.getDayOfMonth()+" "+clock_time.getCurrentHour()+":"+clock_time.getCurrentMinute());
     }
 }

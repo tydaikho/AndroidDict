@@ -1,4 +1,7 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.view.ColorPicker;
 import android.R.color;
 import android.app.Activity;
 import android.content.Intent;
@@ -6,9 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.view.ColorPicker;
 public class BColor extends Activity {
 	private EditText col_set = null;
 	@Override
@@ -21,7 +21,7 @@ public class BColor extends Activity {
         col_set.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ColorPicker colDia = new ColorPicker(BColor.this,color.white,"ÉèÖÃ±³¾°É«",new ColorPicker.OnColorChangedListener() {
+				ColorPicker colDia = new ColorPicker(BColor.this,color.white,"ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½É«",new ColorPicker.OnColorChangedListener() {
 					@Override
 					public void colorChanged(int color) {
 						SysArgs.setBgColor(color);

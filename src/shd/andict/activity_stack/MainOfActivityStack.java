@@ -2,14 +2,10 @@ package shd.andict.activity_stack;
 
 import java.util.List;
 
-import javax.security.auth.PrivateCredentialPermission;
-
 import lmc.lonely.R;
-import android.R.integer;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
-import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;

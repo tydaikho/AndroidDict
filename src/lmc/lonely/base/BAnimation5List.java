@@ -1,14 +1,14 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
-import lmc.lonely.R;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 public class BAnimation5List extends Activity implements OnItemClickListener, OnItemSelectedListener {
 	private ArrayAdapter<String>aAd = null;
 	private ListView anim_5listview = null;

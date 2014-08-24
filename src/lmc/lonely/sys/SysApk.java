@@ -2,6 +2,11 @@ package lmc.lonely.sys;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -14,10 +19,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class SysApk extends Activity implements OnClickListener {
 	private Button apk_install = null;
 	private Button apk_uninstall = null;
@@ -39,7 +40,7 @@ public class SysApk extends Activity implements OnClickListener {
 		if(v.getId()==R.id.apk_install){
 			ArrayList<String>apks = OtherUtils.getSdFile(SysArgs.SD,new String[]{"lonely.apk"});
 			if(apks.size()==0){
-				Toast.makeText(this,SysConts.appName+"°²×°°üLonely.apk²»´æÔÚ",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,SysConts.appName+"ï¿½ï¿½×°ï¿½ï¿½Lonely.apkï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 				return;
 			}
 			Intent it = new Intent(Intent.ACTION_VIEW);
@@ -53,34 +54,34 @@ public class SysApk extends Activity implements OnClickListener {
 	private void init(){
 		List<PackageInfo>pgs = super.getPackageManager().getInstalledPackages(0);
         StringBuffer sb = new StringBuffer("");
-        sb.append("--------µ±Ç°ÏµÍ³²ÎÊý--------\n");
-        sb.append("²úÆ·ÐÍºÅ:"+android.os.Build.MODEL+"\n");
-        sb.append("°æ±¾Ãû:"+android.os.Build.VERSION.RELEASE+"\n");
-        sb.append("°æ±¾ºÅ:"+android.os.Build.VERSION.SDK_INT+"\n");
-        sb.append("SDK°æ±¾ºÅ:"+android.os.Build.VERSION.SDK+"\n\n");
+        sb.append("--------ï¿½ï¿½Ç°ÏµÍ³ï¿½ï¿½ï¿½ï¿½--------\n");
+        sb.append("ï¿½ï¿½Æ·ï¿½Íºï¿½:"+android.os.Build.MODEL+"\n");
+        sb.append("ï¿½æ±¾ï¿½ï¿½:"+android.os.Build.VERSION.RELEASE+"\n");
+        sb.append("ï¿½æ±¾ï¿½ï¿½:"+android.os.Build.VERSION.SDK_INT+"\n");
+        sb.append("SDKï¿½æ±¾ï¿½ï¿½:"+android.os.Build.VERSION.SDK+"\n\n");
         try{
             PackageInfo currInfo = super.getPackageManager().getPackageInfo(super.getPackageName(),0);
-            sb.append("--------µ±Ç°Ó¦ÓÃÐÅÏ¢---------\n");
-            sb.append("Ó¦ÓÃÃû:"+currInfo.applicationInfo.loadLabel(super.getPackageManager()).toString()+"\n");
-			sb.append("°üÃû:"+currInfo.packageName+"\n");
-			sb.append("°æ±¾ºÅ:"+currInfo.versionCode+"\n");
-			sb.append("°æ±¾Ãû:"+currInfo.versionName+"\n");
-			sb.append("Logo¿í¶È:"+currInfo.applicationInfo.loadIcon(super.getPackageManager()).getMinimumWidth()+"\n");
-			sb.append("ÊÇ·ñÎªÏµÍ³Ó¦ÓÃ:"+((currInfo.applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)==0?"·ñ\n\n":"ÊÇ\n\n"));
+            sb.append("--------ï¿½ï¿½Ç°Ó¦ï¿½ï¿½ï¿½ï¿½Ï¢---------\n");
+            sb.append("Ó¦ï¿½ï¿½ï¿½ï¿½:"+currInfo.applicationInfo.loadLabel(super.getPackageManager()).toString()+"\n");
+			sb.append("ï¿½ï¿½ï¿½ï¿½:"+currInfo.packageName+"\n");
+			sb.append("ï¿½æ±¾ï¿½ï¿½:"+currInfo.versionCode+"\n");
+			sb.append("ï¿½æ±¾ï¿½ï¿½:"+currInfo.versionName+"\n");
+			sb.append("Logoï¿½ï¿½ï¿½:"+currInfo.applicationInfo.loadIcon(super.getPackageManager()).getMinimumWidth()+"\n");
+			sb.append("ï¿½Ç·ï¿½ÎªÏµÍ³Ó¦ï¿½ï¿½:"+((currInfo.applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)==0?"ï¿½ï¿½\n\n":"ï¿½ï¿½\n\n"));
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-        sb.append("--------ËùÓÐÓ¦ÓÃÐÅÏ¢--------\n");
+        sb.append("--------ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ï¢--------\n");
 		for(int i=0;i<pgs.size();i++){
 			PackageInfo info = pgs.get(i);
-			sb.append("Ó¦ÓÃÃû:"+info.applicationInfo.loadLabel(super.getPackageManager()).toString()+"\n");
-			sb.append("°üÃû:"+info.packageName+"\n");
-			sb.append("°æ±¾ºÅ:"+info.versionCode+"\n");
-			sb.append("°æ±¾Ãû:"+info.versionName+"\n");
-			sb.append("Logo¿í¶È:"+info.applicationInfo.loadIcon(super.getPackageManager()).getMinimumWidth()+"\n");
-			sb.append("ÊÇ·ñÎªÏµÍ³Ó¦ÓÃ:"+((info.applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)==0?"·ñ\n\n":"ÊÇ\n\n"));
+			sb.append("Ó¦ï¿½ï¿½ï¿½ï¿½:"+info.applicationInfo.loadLabel(super.getPackageManager()).toString()+"\n");
+			sb.append("ï¿½ï¿½ï¿½ï¿½:"+info.packageName+"\n");
+			sb.append("ï¿½æ±¾ï¿½ï¿½:"+info.versionCode+"\n");
+			sb.append("ï¿½æ±¾ï¿½ï¿½:"+info.versionName+"\n");
+			sb.append("Logoï¿½ï¿½ï¿½:"+info.applicationInfo.loadIcon(super.getPackageManager()).getMinimumWidth()+"\n");
+			sb.append("ï¿½Ç·ï¿½ÎªÏµÍ³Ó¦ï¿½ï¿½:"+((info.applicationInfo.flags&ApplicationInfo.FLAG_SYSTEM)==0?"ï¿½ï¿½\n\n":"ï¿½ï¿½\n\n"));
 		}
-		sb.append("¹²"+pgs.size()+"¸öÓ¦ÓÃ");
+		sb.append("ï¿½ï¿½"+pgs.size()+"ï¿½ï¿½Ó¦ï¿½ï¿½");
 		apk_info.setText(sb.toString());
 	}
 }

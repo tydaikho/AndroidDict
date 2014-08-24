@@ -1,17 +1,17 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class BMenu1 extends Activity implements OnClickListener{
 	private ImageView menu_1con = null;
 	private ImageButton menu_1pre = null;
@@ -30,21 +30,21 @@ public class BMenu1 extends Activity implements OnClickListener{
 	@Override
 	public void onCreateContextMenu(ContextMenu menu,View v,ContextMenuInfo menuInfo){
 		super.onCreateContextMenu(menu,v,menuInfo);
-		menu.setHeaderTitle("ÇëÑ¡Ôñ");
-		menu.add(Menu.NONE,Menu.FIRST+1,1,"²é¿´");
-		menu.add(Menu.NONE,Menu.FIRST+2,2,"±à¼­");
+		menu.setHeaderTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½");
+		menu.add(Menu.NONE,Menu.FIRST+1,1,"ï¿½é¿´");
+		menu.add(Menu.NONE,Menu.FIRST+2,2,"ï¿½à¼­");
 	}
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		switch(item.getItemId()){
-			case Menu.FIRST+1:Toast.makeText(this,"Ñ¡Ôñ²é¿´",Toast.LENGTH_SHORT).show();break;
-			case Menu.FIRST+2:Toast.makeText(this,"Ñ¡Ôñ±à¼­",Toast.LENGTH_SHORT).show();break;
+			case Menu.FIRST+1:Toast.makeText(this,"Ñ¡ï¿½ï¿½é¿´",Toast.LENGTH_SHORT).show();break;
+			case Menu.FIRST+2:Toast.makeText(this,"Ñ¡ï¿½ï¿½à¼­",Toast.LENGTH_SHORT).show();break;
 		}
 		return super.onContextItemSelected(item);
 	}
 	@Override
 	public void onContextMenuClosed(Menu menu) {
-		Toast.makeText(this,"¹Ø±ÕÉÏÏÂÎÄ²Ëµ¥",Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²Ëµï¿½",Toast.LENGTH_SHORT).show();
 	}
 	@Override
 	public void onClick(View v) {

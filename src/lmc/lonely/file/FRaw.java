@@ -1,13 +1,14 @@
 package lmc.lonely.file;
 import java.io.InputStream;
 import java.util.Scanner;
+
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
 public class FRaw extends Activity implements OnClickListener{
 	private Button raw_read = null;
 	private TextView raw_res = null;
@@ -28,12 +29,12 @@ public class FRaw extends Activity implements OnClickListener{
 			while(sc.hasNext()){
             	sb.append("--"+sc.next()+"\n");
             }
-			sb.append("RAWÎÄ¼þÓ¦ÒÔUTF-8±àÂë±£´æ\n´æÓÚÓ¦ÓÃÂ·¾¶:/res/raw/lmc.txt");
+			sb.append("RAWï¿½Ä¼ï¿½Ó¦ï¿½ï¿½UTF-8ï¿½ï¿½ï¿½ë±£ï¿½ï¿½\nï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Â·ï¿½ï¿½:/res/raw/lmc.txt");
 			sc.close();
             is.close();
             raw_res.setText(sb.toString());
 		}catch(Exception e){
-			raw_res.setText("¶ÁÈ¡RAWÎÄ¼þÊ§°Ü");
+			raw_res.setText("ï¿½ï¿½È¡RAWï¿½Ä¼ï¿½Ê§ï¿½ï¿½");
 			e.printStackTrace();
 		}
 	}

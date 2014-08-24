@@ -3,15 +3,16 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class FApp extends Activity implements OnClickListener {
 	private String fName = null;
 	private Button fil_create = null;
@@ -39,9 +40,9 @@ public class FApp extends Activity implements OnClickListener {
 		        out.println(SysConts.datao[2]);
 		        out.close();
 		        fos.close();
-		        fil_res.setText("´´½¨Ó¦ÓÃÎÄ¼þ³É¹¦\n´æÓÚ:/data/data/"+super.getApplication().getPackageName()+"/files/"+fName);
+		        fil_res.setText("ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½\nï¿½ï¿½ï¿½ï¿½:/data/data/"+super.getApplication().getPackageName()+"/files/"+fName);
 			}catch(Exception e){
-				fil_res.setText("´´½¨Ó¦ÓÃÎÄ¼þÊ§°Ü");
+				fil_res.setText("ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.fil_read){
@@ -56,7 +57,7 @@ public class FApp extends Activity implements OnClickListener {
 		        fis.close();
 		        fil_res.setText(sb.deleteCharAt(sb.length()-1).toString());
 			}catch(Exception e){
-				fil_res.setText("¶ÁÈ¡Ó¦ÓÃÎÄ¼þÊ§°Ü!ÇëÈ·ÈÏÓ¦ÓÃÎÄ¼þÒÑ´´½¨");
+				fil_res.setText("ï¿½ï¿½È¡Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½!ï¿½ï¿½È·ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}

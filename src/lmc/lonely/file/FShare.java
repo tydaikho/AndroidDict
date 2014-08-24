@@ -1,4 +1,7 @@
 package lmc.lonely.file;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -6,9 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class FShare extends Activity implements OnClickListener {
 	private String fName = null;
 	private SharedPreferences share = null;
@@ -35,12 +35,12 @@ public class FShare extends Activity implements OnClickListener {
 	        edit.putString(SysConts.datak[1][0],SysConts.datak[1][1]);
 	        edit.putString(SysConts.datak[2][0],SysConts.datak[2][1]);
 	        edit.commit();
-	        share_res.setText("´´½¨¹²ÏíÎÄ¼þ³É¹¦\n´æÓÚ:/data/data/"+super.getApplication().getPackageName()+"/shared_prefs/"+fName+".xml");
+	        share_res.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½\nï¿½ï¿½ï¿½ï¿½:/data/data/"+super.getApplication().getPackageName()+"/shared_prefs/"+fName+".xml");
 		}else if(v.getId()==R.id.share_read){
 			if(fName!=null){
-				share_res.setText("--¿ª·¢Õß:"+share.getString("name","Ä¬ÈÏÖµ")+"\n--ÁªÏµµç»°:"+share.getString("phone","Ä¬ÈÏÖµ")+"\n--QQ:"+share.getString("qq","Ä¬ÈÏÖµ"));
+				share_res.setText("--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+share.getString("name","Ä¬ï¿½ï¿½Öµ")+"\n--ï¿½ï¿½Ïµï¿½ç»°:"+share.getString("phone","Ä¬ï¿½ï¿½Öµ")+"\n--QQ:"+share.getString("qq","Ä¬ï¿½ï¿½Öµ"));
 			}else{
-				share_res.setText("¹²ÏíÎÄ¼þÎ´´´½¨");
+				share_res.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Î´ï¿½ï¿½ï¿½ï¿½");
 			}
 		}
 	}

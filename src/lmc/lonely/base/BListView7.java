@@ -1,4 +1,6 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -6,12 +8,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SlidingDrawer;
-import android.widget.Toast;
 import android.widget.SlidingDrawer.OnDrawerCloseListener;
 import android.widget.SlidingDrawer.OnDrawerOpenListener;
 import android.widget.SlidingDrawer.OnDrawerScrollListener;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
+import android.widget.Toast;
 public class BListView7 extends Activity {
 	private SlidingDrawer list_7sd = null;
 	private ImageView list_7pre = null;
@@ -38,11 +38,11 @@ public class BListView7 extends Activity {
         list_7sd.setOnDrawerScrollListener(new OnDrawerScrollListener() {
 			@Override
 			public void onScrollStarted() {
-				Toast.makeText(BListView7.this,"¿ªÊ¼ÍÏ¶¯",Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView7.this,"ï¿½ï¿½Ê¼ï¿½Ï¶ï¿½",Toast.LENGTH_SHORT).show();
 			}
 			@Override
 			public void onScrollEnded() {
-				Toast.makeText(BListView7.this,"Í£Ö¹ÍÏ¶¯",Toast.LENGTH_SHORT).show();
+				Toast.makeText(BListView7.this,"Í£Ö¹ï¿½Ï¶ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		});
         ListView list_cont = new ListView(this);

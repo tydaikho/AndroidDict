@@ -1,4 +1,5 @@
 package lmc.lonely.sys;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -8,7 +9,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import lmc.lonely.R;
 public class SysHsqp extends Activity implements OnClickListener {
 	private TextView hsqp_msg = null;
 	private ImageView hsqp_ico = null;
@@ -35,15 +35,15 @@ public class SysHsqp extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		if(v.getId()==R.id.hsqp_qp){
 			if(super.getRequestedOrientation()==ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED){
-				hsqp_msg.setText("Ã»ÓÐÇÐÆÁÈ¨ÏÞ");
+				hsqp_msg.setText("Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½");
 				return;
 			}
 			if(super.getRequestedOrientation()==ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
 				super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-				hsqp_msg.setText("µ±Ç°ÎªÊúÆÁ");
+				hsqp_msg.setText("ï¿½ï¿½Ç°Îªï¿½ï¿½ï¿½ï¿½");
 			}else if(super.getRequestedOrientation()==ActivityInfo.SCREEN_ORIENTATION_PORTRAIT){
 				super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-				hsqp_msg.setText("µ±Ç°ÎªºáÆÁ");
+				hsqp_msg.setText("ï¿½ï¿½Ç°Îªï¿½ï¿½ï¿½ï¿½");
 			}
 		}
 	}

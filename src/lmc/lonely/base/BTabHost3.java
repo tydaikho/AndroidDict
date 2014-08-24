@@ -1,6 +1,8 @@
 package lmc.lonely.base;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lmc.lonely.R;
 import android.app.TabActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,9 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TabHost;
-import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
-import lmc.lonely.R;
+import android.widget.Toast;
 public class BTabHost3 extends TabActivity {
 	private TabHost tabh = null;
 	private ListView tabh_listyd = null;
@@ -21,19 +22,19 @@ public class BTabHost3 extends TabActivity {
         tabh = super.getTabHost();
         LayoutInflater.from(this).inflate(R.layout.base_tabh3,tabh.getTabContentView(),true);
         tabh.setBackgroundResource(R.drawable.icob_tabh1);
-        tabh.addTab(tabh.newTabSpec("A").setIndicator("ÇòÀàÔË¶¯",this.getResources().getDrawable(R.drawable.icob_tabh2)).setContent(R.id.tabh_lay31));
-		tabh.addTab(tabh.newTabSpec("B").setIndicator("Ë®ÉÏÏîÄ¿",this.getResources().getDrawable(R.drawable.icob_tabh3)).setContent(R.id.tabh_lay32));
-		tabh.addTab(tabh.newTabSpec("C").setIndicator("Ò°ÍâÏîÄ¿",this.getResources().getDrawable(R.drawable.icob_tabh4)).setContent(R.id.tabh_lay33));
-		tabh.addTab(tabh.newTabSpec("D").setIndicator("×¨Òµ½¡Éí",this.getResources().getDrawable(R.drawable.icob_tabh5)).setContent(R.id.tabh_lay34));
+        tabh.addTab(tabh.newTabSpec("A").setIndicator("ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½",this.getResources().getDrawable(R.drawable.icob_tabh2)).setContent(R.id.tabh_lay31));
+		tabh.addTab(tabh.newTabSpec("B").setIndicator("Ë®ï¿½ï¿½ï¿½ï¿½Ä¿",this.getResources().getDrawable(R.drawable.icob_tabh3)).setContent(R.id.tabh_lay32));
+		tabh.addTab(tabh.newTabSpec("C").setIndicator("Ò°ï¿½ï¿½ï¿½ï¿½Ä¿",this.getResources().getDrawable(R.drawable.icob_tabh4)).setContent(R.id.tabh_lay33));
+		tabh.addTab(tabh.newTabSpec("D").setIndicator("×¨Òµï¿½ï¿½ï¿½ï¿½",this.getResources().getDrawable(R.drawable.icob_tabh5)).setContent(R.id.tabh_lay34));
 		tabh.setOnTabChangedListener(new OnTabChangeListener() {
 			@Override
 			public void onTabChanged(String tab) {
-				Toast.makeText(BTabHost3.this,"Ñ¡Ïî¿¨:"+tab,Toast.LENGTH_SHORT).show();
+				Toast.makeText(BTabHost3.this,"Ñ¡ï¿½î¿¨:"+tab,Toast.LENGTH_SHORT).show();
 			}
 		});
 		tabh_listyd = (ListView) super.findViewById(R.id.tabh_3list1);
         tabh_listjs = (ListView) super.findViewById(R.id.tabh_3list2);
-		String[]data = new String[]{"Ò°ÍâµÇÉ½","¸ßÉ½±Ä¼«","Í½²½Ô¶×ã","º£Ì²ãåÔ¡"};
+		String[]data = new String[]{"Ò°ï¿½ï¿½ï¿½É½","ï¿½ï¿½É½ï¿½Ä¼ï¿½","Í½ï¿½ï¿½Ô¶ï¿½ï¿½","ï¿½ï¿½Ì²ï¿½ï¿½Ô¡"};
 		tabh_listyd.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data));
 		tabh_listjs.setAdapter(new SimpleAdapter(this,this.init(),R.layout.base_tabh3list,
 			new String[]{"title","cont"},new int[]{R.id.tabh_3title,R.id.tabh_3cont}));
@@ -42,15 +43,15 @@ public class BTabHost3 extends TabActivity {
     	ArrayList<HashMap<String,Object>>res = new ArrayList<HashMap<String,Object>>();
 		HashMap<String,Object>data = new HashMap<String,Object>();
 		data.put("title",R.drawable.icob_tabh6);
-		data.put("cont","Æ÷ÐµÔË¶¯(À­Á¦Æ÷,¸©ÎÔ³ÅµÈ)");
+		data.put("cont","ï¿½ï¿½Ðµï¿½Ë¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ô³Åµï¿½)");
 		res.add(data);
 		data = new HashMap<String,Object>();
 		data.put("title",R.drawable.icob_tabh7);
-		data.put("cont","ÓÐÑõÔË¶¯(ÅÜ²½,½¡ÃÀ²ÙµÈ)");
+		data.put("cont","ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½(ï¿½Ü²ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Ùµï¿½)");
 		res.add(data);
 		data = new HashMap<String,Object>();
 		data.put("title",R.drawable.icob_tabh8);
-		data.put("cont","À­ÉìÔË¶¯(è¤Ù¤,ÆÕÀ­ÌáµÈ)");
+		data.put("cont","ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½(ï¿½Ù¤,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)");
 		res.add(data);
 		return res;
 	}

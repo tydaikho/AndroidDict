@@ -1,7 +1,8 @@
 package lmc.lonely;
-import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Properties;
+
 import android.content.Context;
 import android.os.Environment;
 public class SysArgs {

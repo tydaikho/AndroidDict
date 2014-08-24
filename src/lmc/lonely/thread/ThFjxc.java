@@ -1,4 +1,5 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
 public class ThFjxc extends Activity implements OnClickListener{
 	private Button fjxc_start = null;
 	private Button fjxc_end = null;
@@ -16,7 +16,7 @@ public class ThFjxc extends Activity implements OnClickListener{
 	private Runnable upd = new Runnable() {
 		@Override
 		public void run() {
-			fjxc_msg.append("线程"+Thread.currentThread().getName()+"时间:"+System.currentTimeMillis()+"\n");
+			fjxc_msg.append("锟竭筹拷"+Thread.currentThread().getName()+"时锟斤拷:"+System.currentTimeMillis()+"\n");
 			hdler.postDelayed(upd,3000);
 		}
 	};

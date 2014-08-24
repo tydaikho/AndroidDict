@@ -3,6 +3,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import lmc.adater.FLkFilesAdapter;
+import lmc.lonely.R;
+import lmc.utils.FLkFilesCtor;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,9 +14,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.adater.FLkFilesAdapter;
-import lmc.lonely.R;
-import lmc.utils.FLkFilesCtor;
 public class FLkFiles extends ListActivity {
 	private final String root = "/";
 	private List<String>paths = null;
@@ -26,7 +27,7 @@ public class FLkFiles extends ListActivity {
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
         	this.getDir(Environment.getExternalStorageDirectory().getAbsolutePath());
         }else{
-        	Toast.makeText(this,"Ã»ÓÐSD¿¨",Toast.LENGTH_SHORT).show();
+        	Toast.makeText(this,"Ã»ï¿½ï¿½SDï¿½ï¿½",Toast.LENGTH_SHORT).show();
         }
     }
     @Override
@@ -36,7 +37,7 @@ public class FLkFiles extends ListActivity {
 			if(file.canRead()){
 				this.getDir(file.getAbsolutePath());
 			}else{
-				Toast.makeText(this,file.getName()+"Ä¿Â¼²»¿É¶Á",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,file.getName()+"Ä¿Â¼ï¿½ï¿½ï¿½É¶ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}
     }

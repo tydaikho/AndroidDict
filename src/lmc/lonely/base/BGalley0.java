@@ -1,11 +1,11 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import lmc.lonely.R;
 public class BGalley0 extends Activity implements OnClickListener {
 	public static int[]pics = new int[]{
 	    R.drawable.icob_gal01,R.drawable.icob_gal02,R.drawable.icob_gal03,R.drawable.icob_gal04,

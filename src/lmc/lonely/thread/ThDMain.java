@@ -1,6 +1,11 @@
 package lmc.lonely.thread;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
+
+import lmc.entity.Book;
+import lmc.lonely.AppMgr;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +16,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.entity.Book;
-import lmc.lonely.AppMgr;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class ThDMain extends Activity implements OnClickListener {
 	private Button data_cm = null;
 	private TextView data_sys = null;
@@ -28,7 +29,7 @@ public class ThDMain extends Activity implements OnClickListener {
         data_sys = (TextView) super.findViewById(R.id.data_sys);
         data_cmres = (TextView) super.findViewById(R.id.data_cmres);
         data_cm.setOnClickListener(this);
-        data_sys.setText("È«¾Ö²ÎÊý:"+app.getAppName());
+        data_sys.setText("È«ï¿½Ö²ï¿½ï¿½ï¿½:"+app.getAppName());
         ClipboardManager cbm = (ClipboardManager) super.getSystemService(Context.CLIPBOARD_SERVICE);
         String obj = cbm.getText().toString();
     	try{
@@ -36,7 +37,7 @@ public class ThDMain extends Activity implements OnClickListener {
                 byte[]data = Base64.decode(obj,Base64.DEFAULT);
                 ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data));
                 Book bk = (Book) ois.readObject();
-                data_cmres.setText("¶ÁÈ¡¼ôÇÐ°åÖÐ¶ÔÏó\nÊéÃû:"+bk.getBookName()+"\n¼Û¸ñ:"+bk.getBookPrice());
+                data_cmres.setText("ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ð°ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½\nï¿½ï¿½ï¿½ï¿½:"+bk.getBookName()+"\nï¿½Û¸ï¿½:"+bk.getBookPrice());
                 ois.close();
     		}
 		}catch(Exception e){

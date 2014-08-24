@@ -1,13 +1,13 @@
 package lmc.lonely.base;
+import lmc.adater.BGalley8Adapter;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 import android.widget.Toast;
-import lmc.adater.BGalley8Adapter;
-import lmc.lonely.R;
 public class BGalley8 extends Activity {
 	private GridView gal_8grid = null;
 	@Override

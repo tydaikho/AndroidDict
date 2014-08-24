@@ -1,6 +1,9 @@
 package lmc.lonely.base;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +12,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class BListView1 extends Activity {
 	private ArrayList<HashMap<String,String>>dList = null;
 	private SimpleAdapter sAd = null;

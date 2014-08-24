@@ -1,20 +1,15 @@
 package shd.andict.activity_stack;
 
-import java.security.PublicKey;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
-
 
 import lmc.lonely.R;
 import android.app.ActivityManager;
-import android.app.Service;
 import android.app.ActivityManager.RunningTaskInfo;
+import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
-import android.text.format.Time;
 import android.util.Log;
 
 /**

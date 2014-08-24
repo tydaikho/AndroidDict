@@ -1,4 +1,7 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
+import lmc.utils.TimeUtils;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -19,18 +22,15 @@ import android.widget.Button;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
-import android.widget.ZoomControls;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
-import lmc.utils.TimeUtils;
+import android.widget.ZoomControls;
 public class BTextView extends Activity {
 	private TextView txt_call = null;
 	private TextView txt_html = null;
 	private TextView txt_span = null;
 	private TextView txt_blog = null;
 	private TextView txt_img = null;
-	private String[]words = new String[]{"abÑ§Éú","abÑ§Ï°","abÑ§Éú»á","abÑ§Ç°°à","abÑ§Ï°Î¯Ô±","abÑ§ºÃ","abÑ§×öÈË","abGoogle","abGoogle Map"};
+	private String[]words = new String[]{"abÑ§ï¿½ï¿½","abÑ§Ï°","abÑ§ï¿½ï¿½ï¿½","abÑ§Ç°ï¿½ï¿½","abÑ§Ï°Î¯Ô±","abÑ§ï¿½ï¿½","abÑ§ï¿½ï¿½ï¿½ï¿½","abGoogle","abGoogle Map"};
 	private ArrayAdapter<String>wAd = null;
 	private AutoCompleteTextView txt_auto = null;
 	private MultiAutoCompleteTextView txt_mauto = null;
@@ -55,20 +55,20 @@ public class BTextView extends Activity {
         txt_zoom = (ZoomControls) super.findViewById(R.id.txt_zoom);
         txt_zoomres = (TextView) super.findViewById(R.id.txt_zoomres);
         txt_call.setMovementMethod(LinkMovementMethod.getInstance());
-        txt_html.setText(Html.fromHtml("<a href='"+SysConts.down+"'>Ô´ÂëÏÂÔØ</a>"));
+        txt_html.setText(Html.fromHtml("<a href='"+SysConts.down+"'>Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>"));
         txt_html.setMovementMethod(LinkMovementMethod.getInstance());
-        SpannableString ss = new SpannableString("×Ö·ûÁ´½Ó");
+        SpannableString ss = new SpannableString("ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½");
         ss.setSpan(new ClickableSpan() {
 			@Override
 			public void onClick(View widget) {
 				BTextView.this.onBackPressed();
 			}
-		},0,"×Ö·ûÁ´½Ó".length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		},0,"ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½".length(),Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         txt_span.setText(ss);
         txt_span.setMovementMethod(LinkMovementMethod.getInstance());
-        txt_blog.setText("¿ª·¢Õß²©¿Í:"+SysConts.csdn);
+        txt_blog.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ß²ï¿½ï¿½ï¿½:"+SysConts.csdn);
         Linkify.addLinks(txt_blog,Linkify.ALL);
-        String img = "Í¼Æ¬Á´½Ó<a href='"+SysConts.csdn+"'><img src='ico_txt'/></a>";
+        String img = "Í¼Æ¬ï¿½ï¿½ï¿½ï¿½<a href='"+SysConts.csdn+"'><img src='ico_txt'/></a>";
         CharSequence imgChars = Html.fromHtml(img,new ImageGetter() {
 			@Override
 			public Drawable getDrawable(String source) {
@@ -102,7 +102,7 @@ public class BTextView extends Activity {
         txt_format.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				txt_formatres.setText("µ±Ç°Ê±¼ä:"+TimeUtils.getTime(TimeUtils.COX));
+				txt_formatres.setText("ï¿½ï¿½Ç°Ê±ï¿½ï¿½:"+TimeUtils.getTime(TimeUtils.COX));
 			}
 		});
         txt_zoom.setOnZoomInClickListener(new OnClickListener() {

@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -9,7 +10,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.ViewFlipper;
-import lmc.lonely.R;
 public class BPopup extends Activity implements OnClickListener {
 	private Button popup_top = null;
 	private Button popup_buttom = null;

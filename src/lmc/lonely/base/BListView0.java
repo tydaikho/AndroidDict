@@ -1,12 +1,12 @@
 package lmc.lonely.base;
+import lmc.lonely.AppMgr;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import lmc.lonely.AppMgr;
-import lmc.lonely.R;
 public class BListView0 extends Activity implements OnClickListener {
 	private Button list_item1 = null;
 	private Button list_item2 = null;

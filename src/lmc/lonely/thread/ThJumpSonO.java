@@ -1,4 +1,6 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class ThJumpSonO extends Activity implements OnClickListener {
 	private Button jump_doub2=null;
 	private TextView jump_res2 = null;
@@ -21,11 +21,11 @@ public class ThJumpSonO extends Activity implements OnClickListener {
         boolean enable = super.getIntent().getBooleanExtra("enable",false);
     	if(!enable){
         	jump_doub2.setEnabled(false);
-        	jump_res2.setText("¶ÁÈ¡µ¥ÏòÌø×ª²ÎÊý\n¿ª·¢Õß:"+name+"\n°´Å¥ÊÇ·ñ¿ÉÓÃ:"+enable);
+        	jump_res2.setText("ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+name+"\nï¿½ï¿½Å¥ï¿½Ç·ï¿½ï¿½ï¿½ï¿½:"+enable);
         }else{
         	jump_doub2.setEnabled(true);
         	jump_doub2.setOnClickListener(this);
-        	jump_res2.setText("¶ÁÈ¡Ë«ÏòÌø×ª²ÎÊý\n¿ª·¢Õß:"+name+"\n°´Å¥ÊÇ·ñ¿ÉÓÃ:"+enable);
+        	jump_res2.setText("ï¿½ï¿½È¡Ë«ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+name+"\nï¿½ï¿½Å¥ï¿½Ç·ï¿½ï¿½ï¿½ï¿½:"+enable);
         }
     }
 	@Override

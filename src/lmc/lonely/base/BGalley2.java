@@ -1,5 +1,10 @@
 package lmc.lonely.base;
 import java.util.ArrayList;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,10 +17,6 @@ import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class BGalley2 extends Activity implements OnClickListener {
 	private int index = 0;
 	private String[]paths = null;
@@ -50,7 +51,7 @@ public class BGalley2 extends Activity implements OnClickListener {
         	gal_2path.setText(paths[index]);
         }else{
         	gal_2is.setImageResource(R.drawable.icob_gal01);
-        	gal_2path.setText("SD¿¨Ã»ÓÐÍ¼Æ¬");
+        	gal_2path.setText("SDï¿½ï¿½Ã»ï¿½ï¿½Í¼Æ¬");
         }
         gal_2is.setInAnimation(AnimationUtils.loadAnimation(this,android.R.anim.fade_in));
         gal_2is.setOutAnimation(AnimationUtils.loadAnimation(this,android.R.anim.fade_out));

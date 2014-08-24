@@ -1,5 +1,6 @@
 package lmc.lonely;
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.Application;
 public class AppMgr extends Application {

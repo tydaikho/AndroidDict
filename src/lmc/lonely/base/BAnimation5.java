@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class BAnimation5 extends Activity implements OnClickListener {
 	private int index = 0;
 	private int[]aIds = new int[]{R.anim.ani_anima_5mysim,R.anim.ani_anima_5a,R.anim.ani_anima_5s,R.anim.ani_anima_5t,R.anim.ani_anima_5r,

@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -20,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import lmc.lonely.R;
 public class BButton extends Activity implements OnClickListener,OnTouchListener,OnFocusChangeListener,OnKeyListener {
 	private ToggleButton but_onoff = null;
 	private Button but_clk = null;

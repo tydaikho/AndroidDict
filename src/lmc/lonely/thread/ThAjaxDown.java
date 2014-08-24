@@ -1,4 +1,5 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import lmc.lonely.R;
 public class ThAjaxDown extends Activity implements OnClickListener {
 	private Button ajax_down = null;
 	private ProgressBar ajax_prog = null;

@@ -1,4 +1,5 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import lmc.lonely.R;
 public class BAnimation1 extends Activity implements OnClickListener {
 	private Button anima_1drdc = null;
 	private Button anima_1sfxg = null;

@@ -1,4 +1,6 @@
 package lmc.lonely.lay;
+import lmc.lonely.R;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,8 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.utils.OtherUtils;
 public class LayComx extends Activity {
 	private LinearLayout comx_layjh = null;
 	private LinearLayout comx_layzh = null;

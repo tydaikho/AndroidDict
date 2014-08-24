@@ -1,10 +1,10 @@
 package lmc.lonely.base;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class BListView4 extends Activity {
 	private ListView list_4view = null;
 	@Override

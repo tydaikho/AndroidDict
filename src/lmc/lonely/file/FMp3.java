@@ -1,5 +1,9 @@
 package lmc.lonely.file;
 import java.util.ArrayList;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -8,9 +12,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.utils.OtherUtils;
 public class FMp3 extends Activity implements OnClickListener {
 	private Button mus_start = null;
 	private Button mus_pause = null;
@@ -48,7 +49,7 @@ public class FMp3 extends Activity implements OnClickListener {
 		if(v.getId()==R.id.mus_start){
 			ArrayList<String>mp3s = OtherUtils.getSdFile(SysArgs.SD,new String[]{".mp3"});
 			if(mp3s.size()==0){
-				Toast.makeText(this,"SD¿¨ÖÐ²»´æÔÚmp3ÎÄ¼þ",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"SDï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½mp3ï¿½Ä¼ï¿½",Toast.LENGTH_SHORT).show();
 				return;
 			}
 			if(!isPlaying){
@@ -59,32 +60,32 @@ public class FMp3 extends Activity implements OnClickListener {
 				isPause = false;
 				isEnd = false;
 			}else{
-				Toast.makeText(this,"ÒôÀÖÔÚ²¥·ÅÖÐ",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}else if(v.getId()==R.id.mus_pause){
 			if(isPlaying&&!isEnd){
 				if(!isPause){
 					player.pause();
-					mus_pause.setText("¼ÌÐø");
+					mus_pause.setText("ï¿½ï¿½ï¿½ï¿½");
 					isPause = true;
 				}else{
 					player.start();
-					mus_pause.setText("ÔÝÍ£");
+					mus_pause.setText("ï¿½ï¿½Í£");
 					isPause = false;
 				}
 			}else{
-				Toast.makeText(this,"Ã»ÓÐÒôÀÖÔÚ²¥·Å",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}else if(v.getId()==R.id.mus_end){
 			if(isPlaying){
 				player.stop();
 				player.release();
-				mus_pause.setText("ÔÝÍ£");
+				mus_pause.setText("ï¿½ï¿½Í£");
 				isPlaying = false;
 				isPause = false;
 				isEnd = true;
 			}else{
-				Toast.makeText(this,"Ã»ÓÐÒôÀÖÔÚ²¥·Å",Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,"Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 			}
 		}
 	}

@@ -1,6 +1,9 @@
 package lmc.lonely.thread;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
+
+import lmc.entity.Book;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +14,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.entity.Book;
-import lmc.lonely.R;
 public class ThDSon extends Activity implements OnClickListener {
 	private Button data_cmret = null;
 	private TextView data_res = null;
@@ -24,7 +25,7 @@ public class ThDSon extends Activity implements OnClickListener {
         data_res = (TextView) super.findViewById(R.id.data_res);
         data_cmret.setOnClickListener(this);
         ClipboardManager cbm = (ClipboardManager) super.getSystemService(Context.CLIPBOARD_SERVICE);
-        data_res.setText("¶ÁÈ¡¼ôÇÐ°åÖÐ²ÎÊý:"+cbm.getText());
+        data_res.setText("ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ð°ï¿½ï¿½Ð²ï¿½ï¿½ï¿½:"+cbm.getText());
     }
 	@Override
 	public void onClick(View v) {
@@ -32,7 +33,7 @@ public class ThDSon extends Activity implements OnClickListener {
 			try{
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 				ObjectOutputStream oos = new ObjectOutputStream(baos);
-				oos.writeObject(new Book("¡¶Æ½·²µÄÊÀ½ç¡·",99.99f));
+				oos.writeObject(new Book("ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡·",99.99f));
 				String data = Base64.encodeToString(baos.toByteArray(),Base64.DEFAULT);
 				oos.close();
 				ClipboardManager cbm = (ClipboardManager) super.getSystemService(Context.CLIPBOARD_SERVICE);

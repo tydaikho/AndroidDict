@@ -2,6 +2,7 @@ package lmc.view;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -49,7 +50,7 @@ public class BCalPicker extends View {
 			public boolean onSingleTapUp(MotionEvent e) {
 				day = BCalPicker.this.getDay(e.getX(),e.getY());
 				if(day!=-1){
-					Toast.makeText(con,"ÈÕÆÚ:"+year+"-"+month+"-"+day+"\n¿ÉÌí¼ÓÆäËû´¦ÀíµÄ´úÂë",Toast.LENGTH_SHORT).show();
+					Toast.makeText(con,"ï¿½ï¿½ï¿½ï¿½:"+year+"-"+month+"-"+day+"\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 				}
 				return true;
 			}
@@ -67,8 +68,8 @@ public class BCalPicker extends View {
 		paint.setStyle(Paint.Style.FILL_AND_STROKE);
 		paint.setColor(Color.BLACK);
 		paint.setTextSize(20f);
-		can.drawText(year+"Äê"+(month+1)+"ÔÂ",(padding_cell*7)/2-35,50,paint);
-		String[]days = new String[]{"Ò»","¶þ","Èý","ËÄ","Îå","Áù","ÈÕ"};
+		can.drawText(year+"ï¿½ï¿½"+(month+1)+"ï¿½ï¿½",(padding_cell*7)/2-35,50,paint);
+		String[]days = new String[]{"Ò»","ï¿½ï¿½","ï¿½ï¿½","ï¿½ï¿½","ï¿½ï¿½","ï¿½ï¿½","ï¿½ï¿½"};
 		for(int i=0;i<days.length;i++){
 			can.drawText(days[i],padding_left+i*padding_cell,padding_top,paint);
 		}

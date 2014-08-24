@@ -1,10 +1,10 @@
 package lmc.lonely.thread;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import lmc.lonely.R;
 public class ThJumpSonT extends Activity implements OnClickListener {
 	private TextView jump_diaret = null;
     @Override

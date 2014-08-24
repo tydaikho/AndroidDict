@@ -1,4 +1,6 @@
 package lmc.lonely.thread;
+import lmc.lonely.Main;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -10,8 +12,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import lmc.lonely.Main;
-import lmc.lonely.R;
 public class ThAjaxCheck extends Activity implements OnClickListener {
 	private String res = "";
 	private Handler hdler = null;
@@ -42,26 +42,26 @@ public class ThAjaxCheck extends Activity implements OnClickListener {
 			String user = ajchk_user.getText().toString().trim();
 	    	String pwd = ajchk_pwd.getText().toString().trim();
 	    	if(user.equals("")){
-	    		ajchk_user.setError("ÇëÊäÈëÓÃ»§Ãû");
+	    		ajchk_user.setError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½");
 	    		return;
 	    	}
 	    	if(pwd.equals("")){
-	    		ajchk_pwd.setError("ÇëÊäÈëÃÜÂë");
+	    		ajchk_pwd.setError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	    		return;
 	    	}
 			new Thread() {
 				@Override
 				public void run() {
-					res = "µÇÂ¼³É¹¦";
+					res = "ï¿½ï¿½Â¼ï¿½É¹ï¿½";
 				}
 			}.start();
 			final ProgressDialog prog = new ProgressDialog(this);
-			prog.setTitle("µÇÂ¼ÑéÖ¤ÖÐ...");
+			prog.setTitle("ï¿½ï¿½Â¼ï¿½ï¿½Ö¤ï¿½ï¿½...");
 			prog.setIcon(R.drawable.ico_logo);
 	    	prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 	    	prog.setMax(100);
 			prog.setProgress(1);
-			prog.setButton("ºóÌ¨",new DialogInterface.OnClickListener() {
+			prog.setButton("ï¿½ï¿½Ì¨",new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dia, int which) {
 					prog.dismiss();

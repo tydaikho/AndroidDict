@@ -2,9 +2,11 @@ package lmc.utils;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import lmc.entity.Person;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
-import lmc.entity.Person;
 public class FXmlPullHelper {
 	public static List<Person>parse(InputStream is,String charSet){
 		List<Person>res = null;

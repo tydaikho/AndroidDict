@@ -1,7 +1,7 @@
 package lmc.lonely.base;
+import lmc.view.BCalPicker;
 import android.app.Activity;
 import android.os.Bundle;
-import lmc.view.BCalPicker;
 public class BClock2 extends Activity {
 	@Override
     public void onCreate(Bundle savedInstanceState) {

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import lmc.lonely.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -12,12 +14,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
-import lmc.lonely.R;
 public class BGalley7 extends Activity {
 	private SimpleAdapter adapter = null;
 	private GridView gal_7grid = null;
@@ -37,8 +38,8 @@ public class BGalley7 extends Activity {
 				iv.setImageResource(img.get("ico"));
 				iv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
 				iv.setScaleType(ImageView.ScaleType.CENTER);
-				Dialog msgDia=new AlertDialog.Builder(BGalley7.this).setIcon(R.drawable.ico_logo).setTitle("查看").
-					setPositiveButton("确定",new DialogInterface.OnClickListener() {
+				Dialog msgDia=new AlertDialog.Builder(BGalley7.this).setIcon(R.drawable.ico_logo).setTitle("锟介看").
+					setPositiveButton("确锟斤拷",new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dia, int which) {
 							dia.dismiss();

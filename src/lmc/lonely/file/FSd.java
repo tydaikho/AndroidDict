@@ -4,16 +4,17 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
+
+import lmc.lonely.R;
+import lmc.lonely.SysArgs;
+import lmc.lonely.SysConts;
+import lmc.utils.OtherUtils;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import lmc.lonely.R;
-import lmc.lonely.SysArgs;
-import lmc.lonely.SysConts;
-import lmc.utils.OtherUtils;
 public class FSd extends Activity implements OnClickListener {
 	private String fName = null;
 	private Button sd_create = null;
@@ -43,16 +44,16 @@ public class FSd extends Activity implements OnClickListener {
 				ps.println(SysConts.datao[1]);
 				ps.println(SysConts.datao[2]);
     			ps.close();
-    			sd_res.setText("´´½¨±¾µØÎÄ¼þ³É¹¦\n´æÓÚ:"+fName);
+    			sd_res.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½É¹ï¿½\nï¿½ï¿½ï¿½ï¿½:"+fName);
 			}catch(Exception e){
-				sd_res.setText("´´½¨±¾µØÎÄ¼þÊ§°Ü");
+				sd_res.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}else if(v.getId()==R.id.sd_read){
 			try{
 				File iFile = new File(fName);
 				if(!iFile.exists()){
-					sd_res.setText("±¾µØÎÄ¼þ²»´æÔÚ");
+					sd_res.setText("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 					return;
 				}
 				FileInputStream fis = new FileInputStream(iFile);
@@ -65,7 +66,7 @@ public class FSd extends Activity implements OnClickListener {
 		        fis.close();
 		        sd_res.setText(sb.deleteCharAt(sb.length()-1).toString());
 			}catch(Exception e){
-				sd_res.setText("¶ÁÈ¡±¾µØÎÄ¼þÊ§°Ü!ÇëÈ·ÈÏ±¾µØÎÄ¼þÒÑ´´½¨");
+				sd_res.setText("ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ê§ï¿½ï¿½!ï¿½ï¿½È·ï¿½Ï±ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½");
 				e.printStackTrace();
 			}
 		}

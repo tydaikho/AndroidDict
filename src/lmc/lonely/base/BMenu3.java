@@ -1,11 +1,11 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View;
 import android.widget.ImageView;
-import lmc.lonely.R;
 public class BMenu3 extends Activity {
 	private ImageView menu_3xml = null;
 	@Override

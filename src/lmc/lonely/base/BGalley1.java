@@ -1,21 +1,21 @@
 package lmc.lonely.base;
+import lmc.adater.BGalley1In6Adapter;
+import lmc.lonely.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ViewSwitcher.ViewFactory;
-import lmc.adater.BGalley1In6Adapter;
-import lmc.lonely.R;
 public class BGalley1 extends Activity {
 	private ImageView curImg = null;
 	private Gallery gal_1show = null;
@@ -54,9 +54,9 @@ public class BGalley1 extends Activity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,ContextMenuInfo info) {
 		super.onCreateContextMenu(menu, v, info);
-    	menu.setHeaderIcon(R.drawable.ico_logo).setHeaderTitle("ÇëÑ¡Ôñ");
-    	menu.add(0,Menu.FIRST+1,1,"Ñ¡¶¨");
-    	menu.add(0,Menu.FIRST+2,2,"È¡Ïû");
+    	menu.setHeaderIcon(R.drawable.ico_logo).setHeaderTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½");
+    	menu.add(0,Menu.FIRST+1,1,"Ñ¡ï¿½ï¿½");
+    	menu.add(0,Menu.FIRST+2,2,"È¡ï¿½ï¿½");
 	}
     @Override
 	public boolean onContextItemSelected(MenuItem item) {

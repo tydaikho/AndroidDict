@@ -1,6 +1,9 @@
 package lmc.lonely.base;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +14,6 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class BCheckBox1 extends Activity implements OnClickListener {
 	private List<CheckBox>cbs = new ArrayList<CheckBox>();
 	private Button box_con = null;
@@ -38,7 +39,7 @@ public class BCheckBox1 extends Activity implements OnClickListener {
 		if(v.getId()==R.id.box_con){
 			StringBuffer sb = new StringBuffer();
 			for(CheckBox cb:cbs){
-				sb.append(cb.getText().toString()+" 被选中:"+cb.isChecked()+"\n");
+				sb.append(cb.getText().toString()+" 锟斤拷选锟斤拷:"+cb.isChecked()+"\n");
 			}
 			Toast.makeText(this,sb.toString(),Toast.LENGTH_SHORT).show();
 		}else if(v.getId()==R.id.box_next){

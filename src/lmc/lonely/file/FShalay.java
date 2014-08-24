@@ -1,17 +1,17 @@
 package lmc.lonely.file;
+import lmc.lonely.R;
 import android.app.NotificationManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.widget.Toast;
-import lmc.lonely.R;
 public class FShalay extends PreferenceActivity {
 	private CheckBoxPreference sharelay_cb = null;
 	private ListPreference sharelay_list = null;
@@ -30,9 +30,9 @@ public class FShalay extends PreferenceActivity {
 					SharedPreferences share = PreferenceManager.getDefaultSharedPreferences(FShalay.this);
 					int time = Integer.valueOf(share.getString("sharelay_list","60"));
 					String web = share.getString("sharelay_et","Null");
-					Toast.makeText(FShalay.this,"ÆôÓÃÍ¬²½\nÍ¬²½Ê±¼ä¼ä¸ô:"+time+"·ÖÖÓ\nÍ¬²½ÍøÖ·:"+web,Toast.LENGTH_SHORT).show();
+					Toast.makeText(FShalay.this,"ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½\nÍ¬ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½:"+time+"ï¿½ï¿½ï¿½ï¿½\nÍ¬ï¿½ï¿½ï¿½ï¿½Ö·:"+web,Toast.LENGTH_SHORT).show();
 				}else{
-					Toast.makeText(FShalay.this,"Í£ÓÃÍ¬²½",Toast.LENGTH_SHORT).show();
+					Toast.makeText(FShalay.this,"Í£ï¿½ï¿½Í¬ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 				}
 				return true;
     		}
@@ -42,7 +42,7 @@ public class FShalay extends PreferenceActivity {
         	@Override
         	public boolean onPreferenceChange(Preference pre, Object obj) {
         		ListPreference lp = (ListPreference) pre;
-        		Toast.makeText(FShalay.this,"Í¬²½Ê±¼ä¼ä¸ô:"+Integer.valueOf(lp.getValue())+"·ÖÖÓ",Toast.LENGTH_SHORT).show();
+        		Toast.makeText(FShalay.this,"Í¬ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½:"+Integer.valueOf(lp.getValue())+"ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT).show();
      			return true;
      		}
      	});

@@ -1,11 +1,11 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.TabActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class BTabHost2 extends TabActivity {
 	private int[]lays = new int[]{R.id.tabh_lay21,R.id.tabh_lay22,R.id.tabh_lay23};
 	private TabHost tabh = null;

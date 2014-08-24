@@ -1,4 +1,6 @@
 package lmc.lonely.base;
+import lmc.lonely.R;
+import lmc.lonely.SysConts;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -18,12 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.RadioGroup.OnCheckedChangeListener;
-import lmc.lonely.R;
-import lmc.lonely.SysConts;
 public class BDialog extends Activity implements OnClickListener {
 	private Button dia_yuan = null;
 	private Button dia_tiao = null;
@@ -32,16 +32,16 @@ public class BDialog extends Activity implements OnClickListener {
 	private TextView dia_chgres = null;
 	private Button dia_chg = null;
 	private Button dia_mstd = null;
-	private String[]fruits = new String[]{"ÀóÖ¦","ÆÏÌÑ","Àõ×Ó","Î÷¹Ï"};
+	private String[]fruits = new String[]{"ï¿½ï¿½Ö¦","ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½"};
 	private Button dia_schs1 = null;
 	private Button dia_schs2 = null;
 	private int seleted = 0;
-	private String[]homes = new String[]{"Âé³Ç","ÉÏº£","Îäºº","ÉîÛÚ"};
-	private String[]descs = new String[]{"Âé³ÇÒò¶Å¾é»¨¶øÎÅÃû","ÉÏº£ÊÇÖÐ¹ú×î·¢´ïµÄ³ÇÊÐÖ®Ò»",
-			"ÎäººÊÇ×î´óµÄÖÐ²¿³ÇÊÐ","ÉîÛÚµÄÖÆÔìÒµºÜ·¢´ï"};
+	private String[]homes = new String[]{"ï¿½ï¿½ï¿½","ï¿½Ïºï¿½","ï¿½äºº","ï¿½ï¿½ï¿½ï¿½"};
+	private String[]descs = new String[]{"ï¿½ï¿½ï¿½ï¿½ï¿½Å¾é»¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½Ïºï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½î·¢ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ö®Ò»",
+			"ï¿½äººï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ü·ï¿½ï¿½ï¿½"};
 	private Button dia_schs3 = null;
 	private TextView dia_schsres = null;
-	private String[]classes = new String[]{"ÐÅÏ¢","Êý½Ì","Íø¹¤","Ó¢Óï","¹úÃ³"};
+	private String[]classes = new String[]{"ï¿½ï¿½Ï¢","ï¿½ï¿½ï¿½","ï¿½ï¿½","Ó¢ï¿½ï¿½","ï¿½ï¿½Ã³"};
 	private boolean[]isChkeds = new boolean[]{false,false,false,false,false};
 	private Button dia_mchs = null;
 	private TextView dia_mchsres = null;
@@ -87,11 +87,11 @@ public class BDialog extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if(v.getId()==R.id.dia_yuan){
-			final ProgressDialog yuan = ProgressDialog.show(this,"²éÕÒÍøÂç","ËÑË÷ÖÐ...");
-			//µÈ¼ÛÉÏÃæÒ»ÐÐ
+			final ProgressDialog yuan = ProgressDialog.show(this,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
+			//ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 			/*final ProgressDialog yuan = new ProgressDialog(this);
-			yuan.setTitle("²éÕÒÍøÂç");
-			yuan.setMessage("ËÑË÷ÖÐ...");
+			yuan.setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			yuan.setMessage("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
 			yuan.onStart();*/
 			new Thread(){
 				@Override
@@ -108,18 +108,18 @@ public class BDialog extends Activity implements OnClickListener {
 			yuan.show();
 		}else if(v.getId()==R.id.dia_tiao){
 			final ProgressDialog tiao = new ProgressDialog(this);
-			tiao.setTitle("²éÕÒÍøÂç");
-			tiao.setMessage("ËÑË÷ÖÐ...");
+			tiao.setTitle("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+			tiao.setMessage("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
 			tiao.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 			tiao.setMax(100);
 			tiao.setProgress(10);
-			tiao.setButton("ºóÌ¨",new DialogInterface.OnClickListener() {
+			tiao.setButton("ï¿½ï¿½Ì¨",new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dia, int which) {
 					dia.dismiss();
 				}
 			});
-			tiao.setButton2("ÏêÇé",new DialogInterface.OnClickListener() {
+			tiao.setButton2("ï¿½ï¿½ï¿½ï¿½",new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dia, int which) {
 					dia.dismiss();
@@ -143,11 +143,11 @@ public class BDialog extends Activity implements OnClickListener {
 			}.start();
 			tiao.show();
 		}else if(v.getId()==R.id.dia_toastset){
-			Toast toast = Toast.makeText(this,"µ×²¿¾ÓÖÐ",Toast.LENGTH_SHORT);
+			Toast toast = Toast.makeText(this,"ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½",Toast.LENGTH_SHORT);
 			toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL,0,0);
 			toast.show();
 		}else if(v.getId()==R.id.dia_toastcus){
-			Toast toast = Toast.makeText(this,SysConts.appName+"»¶Ó­Äã",Toast.LENGTH_SHORT);
+			Toast toast = Toast.makeText(this,SysConts.appName+"ï¿½ï¿½Ó­ï¿½ï¿½",Toast.LENGTH_SHORT);
 			toast.setGravity(Gravity.CENTER,60,60);
 			ImageView iv = new ImageView(this);
 			iv.setImageResource(R.drawable.icob_dia);
@@ -163,7 +163,7 @@ public class BDialog extends Activity implements OnClickListener {
 				@Override
 				public void onCheckedChanged(RadioGroup group, int checkedId) {
 					RadioButton rbt = (RadioButton)view.findViewById(checkedId);
-					dia_chgres.setText("µ±Ç°×´Ì¬:"+rbt.getText());
+					dia_chgres.setText("ï¿½ï¿½Ç°×´Ì¬:"+rbt.getText());
 					win.dismiss();
 				}
 			});
@@ -175,33 +175,33 @@ public class BDialog extends Activity implements OnClickListener {
 				}
 			});
 		}else if(v.getId()==R.id.dia_mstd){
-			Dialog delDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("É¾³ý").
-				setMessage("ÄãÈ·ÈÏÉ¾³ýÂð").setPositiveButton("É¾³ý",new DialogInterface.OnClickListener() {
+			Dialog delDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("É¾ï¿½ï¿½").
+				setMessage("ï¿½ï¿½È·ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½").setPositiveButton("É¾ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
-						Toast.makeText(BDialog.this,"Ñ¡ÔñÁËÉ¾³ý",Toast.LENGTH_SHORT).show();
+						Toast.makeText(BDialog.this,"Ñ¡ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 					}
-				}).setNeutralButton("²é¿´",new DialogInterface.OnClickListener() {
+				}).setNeutralButton("ï¿½é¿´",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
-						Toast.makeText(BDialog.this,"Ñ¡ÔñÁË²é¿´",Toast.LENGTH_SHORT).show();
+						Toast.makeText(BDialog.this,"Ñ¡ï¿½ï¿½ï¿½Ë²é¿´",Toast.LENGTH_SHORT).show();
 				}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
-						Toast.makeText(BDialog.this,"Ñ¡ÔñÁËÈ¡Ïû",Toast.LENGTH_SHORT).show();
+						Toast.makeText(BDialog.this,"Ñ¡ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½",Toast.LENGTH_SHORT).show();
 						dia.dismiss();
 					}
 				}).create();
 			delDia.show();
 		}else if(v.getId()==R.id.dia_schs1){
-			Dialog schDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ÇëÑ¡Ôñ").
+			Dialog schDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½").
 				setItems(fruits,new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia_schsres.setText(fruits[which]);
 					}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
@@ -209,13 +209,13 @@ public class BDialog extends Activity implements OnClickListener {
 				}).create();
 			schDia.show();
 		}else if(v.getId()==R.id.dia_schs2){
-			Dialog arrDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ÇëÑ¡Ôñ").
+			Dialog arrDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½").
 				setItems(R.array.dia_stu,new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia_schsres.setText(BDialog.this.getResources().getStringArray(R.array.dia_stu)[which]);
 					}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
@@ -223,18 +223,18 @@ public class BDialog extends Activity implements OnClickListener {
 				}).create();
 			arrDia.show();
 		}else if(v.getId()==R.id.dia_schs3){
-			Dialog radDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ÇëÑ¡Ôñ").
+			Dialog radDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½").
 				setSingleChoiceItems(homes,0,new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						seleted = which;
 					}
-				}).setPositiveButton("È·¶¨",new DialogInterface.OnClickListener() {
+				}).setPositiveButton("È·ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia_schsres.setText(descs[seleted]);
 					}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
@@ -242,13 +242,13 @@ public class BDialog extends Activity implements OnClickListener {
 				}).create();
 			radDia.show();
 		}else if(v.getId()==R.id.dia_mchs){
-			Dialog mchDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ÇëÑ¡Ôñ")
+			Dialog mchDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ï¿½ï¿½Ñ¡ï¿½ï¿½")
 				.setMultiChoiceItems(classes,isChkeds,new DialogInterface.OnMultiChoiceClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which, boolean isChecked) {
 						isChkeds[which] = isChecked;
 					}
-				}).setPositiveButton("È·¶¨",new DialogInterface.OnClickListener() {
+				}).setPositiveButton("È·ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						StringBuffer cont = new StringBuffer();
@@ -262,7 +262,7 @@ public class BDialog extends Activity implements OnClickListener {
 							dia_mchsres.setText(cont.toString());
 						}
 					}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
@@ -271,13 +271,13 @@ public class BDialog extends Activity implements OnClickListener {
 			mchDia.show();
 		}else if(v.getId()==R.id.dia_cus){
 			View login = LayoutInflater.from(this).inflate(R.layout.base_dialogin,null);
-			Dialog cusDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ÇëµÇÂ¼").
-		        setPositiveButton("È·¶¨",new DialogInterface.OnClickListener() {
+			Dialog cusDia = new AlertDialog.Builder(this).setIcon(R.drawable.ico_logo).setTitle("ï¿½ï¿½ï¿½Â¼").
+		        setPositiveButton("È·ï¿½ï¿½",new DialogInterface.OnClickListener() {
 		        	@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
 					}
-				}).setNegativeButton("È¡Ïû",new DialogInterface.OnClickListener() {
+				}).setNegativeButton("È¡ï¿½ï¿½",new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dia, int which) {
 						dia.dismiss();
@@ -288,7 +288,7 @@ public class BDialog extends Activity implements OnClickListener {
 			Dialog date = new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener() {
 				@Override
 				public void onDateSet(DatePicker v, int year, int month, int day) {
-					dia_dtres.setText("ÉèÖÃÈÕÆÚ:"+year+"-"+(month+1)+"-"+day);
+					dia_dtres.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+year+"-"+(month+1)+"-"+day);
 				}
 			},1988,11,26);
 			date.show();
@@ -296,7 +296,7 @@ public class BDialog extends Activity implements OnClickListener {
 			Dialog time = new TimePickerDialog(this,new TimePickerDialog.OnTimeSetListener() {
 				@Override
 				public void onTimeSet(TimePicker v, int hour, int minute) {
-					dia_dtres.setText("ÉèÖÃÊ±¼ä:"+hour+":"+minute);
+					dia_dtres.setText("ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½:"+hour+":"+minute);
 				}
 			},23,20,true);
 			time.show();
